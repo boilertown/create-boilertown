@@ -1,40 +1,20 @@
 #! /usr/bin/env node
-import inquirer from 'inquirer';
-import { exit } from 'node:process';
-import { TEMPLATES } from './constants.js';
-import { getPkgManagerFromAgent } from './utils/getPkgManagerFromAgent.js';
+import process from 'node:process';
+import chalk from 'chalk';
 import { renderTitle } from './utils/renderTitle.js';
-
-interface CliResults {
-	projectName: string;
-}
+import { scaffoldProject } from './helpers/scaffoldProject.js';
+import { cliPrompt } from './helpers/cliPrompt.js';
 
 const main = async () => {
 	renderTitle();
+	const { projectName } = await cliPrompt();
+	await scaffoldProject({ projectName });
 
-	const results = await inquirer.prompt<CliResults>([
-		{
-			name: 'projectName',
-			message: 'Project name:',
-			default: 'my-boilertowns-project',
-		},
-		{
-			name: 'template',
-			type: 'list',
-			message: 'Select a template:',
-			choices: TEMPLATES,
-		},
-	]);
-
-	const pkgManager = getPkgManagerFromAgent();
-
-	console.log(pkgManager);
-	console.log(results);
-
-	exit(0);
+	console.log(chalk.greenBright("\n\nYou're all set!\n"));
+	process.exit(0);
 };
 
 main().catch((err) => {
-	console.log(err);
-	exit(1);
+	console.log(chalk.red(err));
+	process.exit(0);
 });
