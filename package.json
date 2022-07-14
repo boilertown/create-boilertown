@@ -1,7 +1,8 @@
 {
 	"name": "boilertowns",
+	"private": true,
 	"version": "0.0.0",
-	"description": "Create boilerplates for everything.",
+	"description": "The ultimate boilerplate generator for your project.",
 	"author": "mikunpham <mikun1993@gmail.com>",
 	"license": "MIT",
 	"type": "module",
@@ -18,7 +19,8 @@
 	"scripts": {
 		"build": "tsup src/index.ts --format esm --clean --minify --metafile",
 		"dev": "tsup src/index.ts --format esm --watch --clean --onSuccess \"node dist/index.js\"",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"release": "changeset publish"
 	},
 	"dependencies": {
 		"chalk": "^5.0.1",
@@ -30,6 +32,8 @@
 		"ora": "^6.1.2"
 	},
 	"devDependencies": {
+		"@changesets/changelog-github": "^0.4.5",
+		"@changesets/cli": "^2.23.2",
 		"@commitlint/cli": "^17.0.3",
 		"@commitlint/config-conventional": "^17.0.3",
 		"@types/figlet": "^1.5.4",
