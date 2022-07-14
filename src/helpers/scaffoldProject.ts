@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import fs from 'node:fs';
-import inquirer from 'inquirer';
+import enquirer from 'enquirer';
 import ora from 'ora';
 import { cleanupDir } from '../utils/cleanupDir.js';
 import { CliResults } from '../types.js';
@@ -23,7 +23,7 @@ export const scaffoldProject = async ({ projectDir }: Params) => {
 		const files = fs.readdirSync(projectDir);
 		if (files.length) {
 			spinner.stopAndPersist();
-			const { shouldOverwrite } = await inquirer.prompt<
+			const { shouldOverwrite } = await enquirer.prompt<
 				Pick<CliResults, 'shouldOverwrite'>
 			>({
 				name: 'shouldOverwrite',
@@ -34,7 +34,7 @@ export const scaffoldProject = async ({ projectDir }: Params) => {
 
 			if (!shouldOverwrite) {
 				spinner.fail();
-				throw new Error('Aborting operation!');
+				throw new Error('Aborted! 👋');
 			}
 
 			cleanupDir(projectDir);

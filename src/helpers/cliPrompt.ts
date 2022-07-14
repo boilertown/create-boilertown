@@ -2,6 +2,12 @@ import path from 'node:path';
 import enquirer from 'enquirer';
 import { boilerplates } from '../boilerplates.js';
 import type { CliResults } from '../types.js';
+import { logger } from '../utils/logger.js';
+
+const cancelFlow = () => {
+	logger.error('Aborted! 👋');
+	process.exit();
+};
 
 export const cliPrompt = async (): Promise<CliResults> => {
 	const answers = await enquirer.prompt<CliResults>([
@@ -10,12 +16,14 @@ export const cliPrompt = async (): Promise<CliResults> => {
 			type: 'input',
 			message: 'Project name:',
 			initial: 'my-boilertowns-project',
+			onCancel: cancelFlow,
 		},
 		{
 			name: 'boilerplate',
 			type: 'select',
 			message: 'Select a boilerplate:',
 			choices: boilerplates,
+			onCancel: cancelFlow,
 		},
 	]);
 
