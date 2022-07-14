@@ -1,5 +1,5 @@
+import chalk from 'chalk';
 import fs from 'node:fs';
-
 import inquirer from 'inquirer';
 import ora from 'ora';
 import { cleanupDir } from '../utils/cleanupDir.js';
@@ -13,7 +13,9 @@ interface Params {
  * Start scaffolding project.
  */
 export const scaffoldProject = async ({ projectDir }: Params) => {
-	const spinner = ora(`Scaffolding project in ${projectDir}`).start();
+	const spinner = ora(
+		`Scaffolding project in ${chalk.bold.cyan(projectDir)}`,
+	).start();
 
 	if (!fs.existsSync(projectDir)) {
 		fs.mkdirSync(projectDir);
