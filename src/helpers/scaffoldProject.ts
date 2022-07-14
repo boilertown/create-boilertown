@@ -2,7 +2,7 @@ import fs from 'node:fs';
 
 import inquirer from 'inquirer';
 import ora from 'ora';
-import { emptyDir } from '../utils/emptyDir.js';
+import { cleanupDir } from '../utils/cleanupDir.js';
 import { CliResults } from '../types.js';
 
 interface Params {
@@ -35,7 +35,7 @@ export const scaffoldProject = async ({ projectDir }: Params) => {
 				throw new Error('Aborting operation!');
 			}
 
-			emptyDir(projectDir);
+			cleanupDir(projectDir);
 		}
 	}
 

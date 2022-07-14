@@ -3,7 +3,7 @@ import gradient from 'gradient-string';
 import { APP_NAME } from '../constants.js';
 
 /**
- * Render `Boilertowns` at the beginning of the app.
+ * Render `Boilertowns` at the beginning.
  */
 export const renderTitle = () => {
 	const text = figlet.textSync(APP_NAME, {
