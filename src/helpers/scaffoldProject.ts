@@ -1,24 +1,21 @@
+import chalk from 'chalk';
 import fs from 'node:fs';
-import process from 'node:process';
-import path from 'node:path';
 import inquirer from 'inquirer';
 import ora from 'ora';
-import { emptyDir } from '../utils/emptyDir.js';
+import { cleanupDir } from '../utils/cleanupDir.js';
 import { CliResults } from '../types.js';
 
-interface ScaffoldProjectParams {
-	projectName: string;
+interface Params {
+	projectDir: string;
 }
 
 /**
  * Start scaffolding project.
  */
-export const scaffoldProject = async ({
-	projectName,
-}: ScaffoldProjectParams) => {
-	const projectDir = path.resolve(process.cwd(), projectName);
-
-	const spinner = ora(`Scaffolding project in ${projectDir}`).start();
+export const scaffoldProject = async ({ projectDir }: Params) => {
+	const spinner = ora(
+		`Scaffolding project in ${chalk.bold.cyan(projectDir)}`,
+	).start();
 
 	if (!fs.existsSync(projectDir)) {
 		fs.mkdirSync(projectDir);
@@ -36,11 +33,11 @@ export const scaffoldProject = async ({
 			});
 
 			if (!shouldOverwrite) {
-				spinner.fail('Aborting operation!');
-				process.exit(0);
+				spinner.fail();
+				throw new Error('Aborting operation!');
 			}
 
-			emptyDir(projectDir);
+			cleanupDir(projectDir);
 		}
 	}
 

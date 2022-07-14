@@ -2,9 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 /**
- * Remove files and directories inside of `dir`.
+ * Remove files and directories inside `dir`.
  */
-export const emptyDir = (dir: string) => {
+export const cleanupDir = (dir: string) => {
 	if (!fs.existsSync(dir)) {
 		return;
 	}
