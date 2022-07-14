@@ -1,9 +1,8 @@
 import chalk from 'chalk';
-import fs from 'node:fs';
-import path from 'node:path';
 import ora from 'ora';
 import { boilerplates } from '../boilerplates.js';
 import { execa } from '../utils/execa.js';
+import { postCloneActions } from './postCloneActions.js';
 
 interface Params {
 	projectDir: string;
@@ -23,13 +22,7 @@ export const cloneBoilerplate = async ({ projectDir, boilerplate }: Params) => {
 		await execa(`git clone --depth 1 ${repository?.url} .`, {
 			cwd: projectDir,
 		});
-
-		// find `.git` folder after cloning the repo to remove it
-		// in order to re-initialize a new one later.
-		fs.rmSync(path.join(projectDir, '.git'), {
-			recursive: true,
-			force: true,
-		});
+		await postCloneActions({ projectDir });
 	} catch (error) {
 		spinner.fail();
 		throw new Error('Could not clone the repository.');
