@@ -1,20 +1,29 @@
 import path from 'node:path';
-import inquirer from 'inquirer';
+import enquirer from 'enquirer';
 import { boilerplates } from '../boilerplates.js';
 import type { CliResults } from '../types.js';
+import { logger } from '../utils/logger.js';
+
+const cancelFlow = () => {
+	logger.error('Aborted! 👋');
+	process.exit();
+};
 
 export const cliPrompt = async (): Promise<CliResults> => {
-	const answers = await inquirer.prompt<CliResults>([
+	const answers = await enquirer.prompt<CliResults>([
 		{
 			name: 'projectName',
+			type: 'input',
 			message: 'Project name:',
-			default: 'my-boilertowns-project',
+			initial: 'my-boilertowns-project',
+			onCancel: cancelFlow,
 		},
 		{
 			name: 'boilerplate',
-			type: 'list',
+			type: 'select',
 			message: 'Select a boilerplate:',
 			choices: boilerplates,
+			onCancel: cancelFlow,
 		},
 	]);
 

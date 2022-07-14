@@ -14,7 +14,7 @@ const main = async () => {
 	await scaffoldProject({ projectDir });
 	await cloneBoilerplate({ projectDir, boilerplate });
 
-	logger.succeed("\nYou're all set!\n");
+	logger.succeed("\n🎉 You're all set!\n");
 	logNextSteps({ projectName });
 };
 

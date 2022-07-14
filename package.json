@@ -25,10 +25,10 @@
 	"dependencies": {
 		"chalk": "^5.0.1",
 		"commander": "^9.3.0",
+		"enquirer": "^2.3.6",
 		"figlet": "^1.5.2",
 		"fs-extra": "^10.1.0",
 		"gradient-string": "^2.0.1",
-		"inquirer": "^9.0.0",
 		"ora": "^6.1.2"
 	},
 	"devDependencies": {
@@ -38,7 +38,6 @@
 		"@commitlint/config-conventional": "^17.0.3",
 		"@types/figlet": "^1.5.4",
 		"@types/gradient-string": "^1.1.2",
-		"@types/inquirer": "^8.2.1",
 		"@types/node": "^18.0.3",
 		"@typescript-eslint/eslint-plugin": "^5.30.5",
 		"@typescript-eslint/parser": "^5.30.5",
