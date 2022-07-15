@@ -1,5 +1,5 @@
-import path from 'node:path';
 import enquirer from 'enquirer';
+import path from 'node:path';
 import { boilerplates } from '../boilerplates.js';
 import type { CliResults } from '../types.js';
 import { logger } from '../utils/logger.js';
