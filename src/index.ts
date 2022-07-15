@@ -1,11 +1,11 @@
 #! /usr/bin/env node
 import process from 'node:process';
-import { renderTitle } from './utils/renderTitle.js';
-import { scaffoldProject } from './helpers/scaffoldProject.js';
 import { cliPrompt } from './helpers/cliPrompt.js';
 import { cloneBoilerplate } from './helpers/cloneBoilerplate.js';
-import { logger } from './utils/logger.js';
 import { logNextSteps } from './helpers/logNextSteps.js';
+import { scaffoldProject } from './helpers/scaffoldProject.js';
+import { logger } from './utils/logger.js';
+import { renderTitle } from './utils/renderTitle.js';
 
 const main = async () => {
 	renderTitle();

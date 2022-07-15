@@ -1,9 +1,10 @@
 import chalk from 'chalk';
-import fs from 'node:fs';
 import enquirer from 'enquirer';
+import fs from 'node:fs';
 import ora from 'ora';
-import { cleanupDir } from '../utils/cleanupDir.js';
+import { ABORT_MESSAGE } from '../constants.js';
 import { CliResults } from '../types.js';
+import { cleanupDir } from '../utils/cleanupDir.js';
 
 interface Params {
 	projectDir: string;
@@ -34,7 +35,7 @@ export const scaffoldProject = async ({ projectDir }: Params) => {
 
 			if (!shouldOverwrite) {
 				spinner.fail();
-				throw new Error('Aborted! 👋');
+				throw new Error(ABORT_MESSAGE);
 			}
 
 			cleanupDir(projectDir);

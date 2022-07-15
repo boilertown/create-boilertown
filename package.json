@@ -19,6 +19,7 @@
 	"scripts": {
 		"build": "tsup src/index.ts --format esm --clean --minify --metafile",
 		"dev": "tsup src/index.ts --format esm --watch --clean --onSuccess \"node dist/index.js\"",
+		"format": "prettier --write \"**/*.{ts,tsx,md,mdx,json}\"",
 		"prepare": "husky install",
 		"release": "changeset publish"
 	},
@@ -36,6 +37,7 @@
 		"@changesets/cli": "^2.23.2",
 		"@commitlint/cli": "^17.0.3",
 		"@commitlint/config-conventional": "^17.0.3",
+		"@trivago/prettier-plugin-sort-imports": "^3.2.0",
 		"@types/figlet": "^1.5.4",
 		"@types/gradient-string": "^1.1.2",
 		"@types/node": "^18.0.3",
