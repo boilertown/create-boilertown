@@ -11,6 +11,9 @@
 	"engines": {
 		"node": ">=14.16"
 	},
+	"files": [
+		"dist"
+	],
 	"keywords": [
 		"boilertowns",
 		"boilerplate",

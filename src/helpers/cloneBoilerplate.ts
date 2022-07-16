@@ -2,7 +2,6 @@ import chalk from 'chalk';
 import ora from 'ora';
 import { boilerplates } from '../boilerplates.js';
 import { execa } from '../utils/execa.js';
-import { postCloneActions } from './postCloneActions.js';
 
 interface Params {
 	projectDir: string;
@@ -10,7 +9,7 @@ interface Params {
 }
 
 /**
- * Clone the git repo based on selected template name.
+ * Clone the git repo based on selected boilerplate.
  */
 export const cloneBoilerplate = async ({ projectDir, boilerplate }: Params) => {
 	const repository = boilerplates.find((b) => b.name === boilerplate);
@@ -19,10 +18,9 @@ export const cloneBoilerplate = async ({ projectDir, boilerplate }: Params) => {
 	).start();
 
 	try {
-		await execa(`git clone --depth 1 ${repository?.url} .`, {
+		await execa(`git clone --depth 1 ${repository?.git} .`, {
 			cwd: projectDir,
 		});
-		await postCloneActions({ projectDir });
 	} catch (error) {
 		spinner.fail();
 		throw new Error('Could not clone the repository.');
