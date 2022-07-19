@@ -1,5 +1,6 @@
 import { Command } from 'commander';
 import enquirer from 'enquirer';
+import { humanId } from 'human-id';
 import path from 'node:path';
 import { boilerplates } from '../boilerplates.js';
 import { ABORT_MESSAGE, APP_NAME } from '../constants.js';
@@ -31,13 +32,17 @@ export const cliPrompt = async (): Promise<CliResults> => {
 	program.parse();
 
 	const cliProjectName = program.args[0];
+	const randomDefaultName = humanId({
+		separator: '-',
+		capitalize: false,
+	});
 
 	const answers = await enquirer.prompt<CliResults>([
 		{
 			name: 'projectName',
 			type: 'input',
 			message: 'Project name:',
-			initial: cliProjectName || 'my-boilertowns-project',
+			initial: cliProjectName || randomDefaultName,
 			skip: !!cliProjectName,
 			result: (value) => convertToValidPackageName(value),
 			onCancel: cancelFlow,

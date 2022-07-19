@@ -20,6 +20,7 @@ specifiers:
   figlet: ^1.5.2
   fs-extra: ^10.1.0
   gradient-string: ^2.0.1
+  human-id: ^4.0.0
   husky: ^8.0.1
   lint-staged: ^13.0.3
   ora: ^6.1.2
@@ -35,6 +36,7 @@ dependencies:
   figlet: 1.5.2
   fs-extra: 10.1.0
   gradient-string: 2.0.1
+  human-id: 4.0.0
   ora: 6.1.2
 
 devDependencies:
@@ -2387,6 +2389,10 @@ packages:
   /human-id/1.0.2:
     resolution: {integrity: sha512-UNopramDEhHJD+VR+ehk8rOslwSfByxPIZyJRfV739NDhN5LF1fa1MqnzKm2lGTQRjNrjK19Q5fhkgIfjlVUKw==}
     dev: true
+
+  /human-id/4.0.0:
+    resolution: {integrity: sha512-pui0xZRgeAlaRt0I9r8N2pNlbNmluvn71EfjKRpM7jOpZbuHe5mm76r67gcprjw/Nd+GpvB9C3OlTbh7ZKLg7A==}
+    dev: false
 
   /human-signals/2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}

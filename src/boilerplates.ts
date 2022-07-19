@@ -1,6 +1,7 @@
 export const boilerplates = [
 	{
-		name: 'react-nostalgia-boilerplate',
-		url: 'git@github.com:boilertowns/react-nostalgia-boilerplate.git',
+		name: 'nostalgia-boilerplate',
+		repo: 'https://github.com/boilertowns/nostalgia-boilerplate',
+		git: 'https://github.com/boilertowns/nostalgia-boilerplate.git',
 	},
 ];
