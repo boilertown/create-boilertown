@@ -5,7 +5,7 @@
 With NPM
 
 ```bash
-npm create boilertowns@latest
+npm init boilertowns@latest
 ```
 
 With Yarn
