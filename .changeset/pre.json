@@ -1,0 +1,8 @@
+{
+	"mode": "pre",
+	"tag": "rc",
+	"initialVersions": {
+		"create-boilertowns": "0.0.0"
+	},
+	"changesets": ["lucky-jeans-drop"]
+}
