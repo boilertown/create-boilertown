@@ -1,6 +1,5 @@
 {
 	"name": "create-boilertowns",
-	"private": true,
 	"version": "0.0.0",
 	"description": "The ultimate boilerplate generator for your project.",
 	"author": "mikunpham <mikun1993@gmail.com>",
