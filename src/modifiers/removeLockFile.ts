@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const LOCKS = [
+const LOCK_FILES = [
 	'package-lock.json',
 	'yarn.lock',
 	'npm-shrinkwrap.json',
@@ -14,7 +14,7 @@ const LOCKS = [
  * after installation.
  */
 export const removeLockFile = async (dir: string) => {
-	for (const file of LOCKS) {
+	for (const file of LOCK_FILES) {
 		const targetFile = path.join(dir, file);
 		if (fs.existsSync(targetFile)) {
 			fs.rmSync(targetFile, {
