@@ -44,12 +44,11 @@ export const cliPrompt = async (): Promise<CliResults> => {
 
 	const options = program.opts();
 	const boilerplateNameFromCLI = options.boilerplate;
-
 	const maybeBoilerplate = boilerplates.find(
 		(b) => b.name === boilerplateNameFromCLI,
 	);
 
-	if (!maybeBoilerplate) {
+	if (options.boilerplate && !maybeBoilerplate) {
 		console.log(
 			`❌ Could not find the boilerplate with name: ${chalk.red(
 				boilerplateNameFromCLI,
