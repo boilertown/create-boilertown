@@ -12,4 +12,5 @@ export const logNextSteps = ({ projectName }: Params) => {
 	logger.info(`  cd ${projectName}`);
 	logger.info(`  ${pkgManager} install`);
 	logger.info(`  ${pkgManager} run dev`);
+	logger.info(`\n`);
 };

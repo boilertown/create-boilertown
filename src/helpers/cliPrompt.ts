@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import { Command } from 'commander';
 import enquirer from 'enquirer';
 import { humanId } from 'human-id';
@@ -23,19 +24,38 @@ export const cliPrompt = async (): Promise<CliResults> => {
 
 	program
 		.argument('[name]', 'name of your project')
+		.option(
+			'-b, --boilerplate <name>',
+			'The boilerplate name that you want to use',
+		)
 		.version(
 			packageJSON.version,
 			'-v, --version',
 			'display the version number',
 		);
 
-	program.parse();
+	program.parse(process.argv);
 
 	const cliProjectName = program.args[0];
 	const randomDefaultName = humanId({
 		separator: '-',
 		capitalize: false,
 	});
+
+	const options = program.opts();
+	const boilerplateNameFromCLI = options.boilerplate;
+
+	const maybeBoilerplate = boilerplates.find(
+		(b) => b.name === boilerplateNameFromCLI,
+	);
+
+	if (!maybeBoilerplate) {
+		console.log(
+			`❌ Could not find the boilerplate with name: ${chalk.red(
+				boilerplateNameFromCLI,
+			)}\n`,
+		);
+	}
 
 	const answers = await enquirer.prompt<CliResults>([
 		{
@@ -52,6 +72,7 @@ export const cliPrompt = async (): Promise<CliResults> => {
 			type: 'select',
 			message: 'Select a boilerplate:',
 			choices: boilerplates,
+			skip: !!maybeBoilerplate,
 			onCancel: cancelFlow,
 		},
 	]);

@@ -8,7 +8,7 @@ export const logger = {
 		console.log(chalk.yellow(...text));
 	},
 	succeed: (...text: unknown[]) => {
-		console.log(chalk.greenBright(...text));
+		console.log(chalk.green(...text));
 	},
 	error: (...text: unknown[]) => {
 		console.log(chalk.red(...text));
