@@ -15,7 +15,7 @@ interface Params {
  */
 export const scaffoldProject = async ({ projectDir }: Params) => {
 	const spinner = ora(
-		`Scaffolding project in ${chalk.bold.cyan(projectDir)}`,
+		`Scaffolding project in ${chalk.cyan(projectDir)}`,
 	).start();
 
 	if (!fs.existsSync(projectDir)) {
