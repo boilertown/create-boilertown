@@ -7,6 +7,7 @@ interface Params {
 
 export const logNextSteps = ({ projectName }: Params) => {
 	const pkgManager = getPkgManagerFromAgent();
+	logger.succeed("\n🎉 You're all set!\n");
 	logger.info('Next steps:');
 	logger.info(`  cd ${projectName}`);
 	logger.info(`  ${pkgManager} install`);

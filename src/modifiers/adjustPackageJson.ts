@@ -17,6 +17,7 @@ export const adjustPackageJson = async ({
 	) as PackageJson;
 
 	packageJsonContent.name = projectName;
+	packageJsonContent.version = '0.0.0';
 	packageJsonContent.repository = undefined;
 
 	fs.writeFileSync(

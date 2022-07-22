@@ -1,24 +1,28 @@
 import chalk from 'chalk';
 import ora from 'ora';
-import { boilerplates } from '../boilerplates.js';
+import type { Boilerplate } from '../types.js';
 import { execa } from '../utils/execa.js';
 
 interface Params {
 	projectDir: string;
-	boilerplate: string;
+	selectedBoilerplate: Boilerplate;
 }
 
 /**
  * Clone the git repo based on selected boilerplate.
  */
-export const cloneBoilerplate = async ({ projectDir, boilerplate }: Params) => {
-	const repository = boilerplates.find((b) => b.name === boilerplate);
+export const cloneBoilerplate = async ({
+	projectDir,
+	selectedBoilerplate,
+}: Params) => {
 	const spinner = ora(
-		`Cloning repo ${chalk.bold.cyan(repository?.name)}`,
+		`Creating project by cloning ${chalk.bold.magenta(
+			selectedBoilerplate.name,
+		)} from ${selectedBoilerplate.repo}`,
 	).start();
 
 	try {
-		await execa(`git clone --depth 1 ${repository?.git} .`, {
+		await execa(`git clone --depth 1 ${`${selectedBoilerplate.repo}.git`} .`, {
 			cwd: projectDir,
 		});
 	} catch (error) {
