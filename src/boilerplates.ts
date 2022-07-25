@@ -2,7 +2,11 @@ import type { Boilerplate } from './types.js';
 
 export const boilerplates: Boilerplate[] = [
 	{
-		name: 'nostalgia-boilerplate',
-		repo: 'https://github.com/boilertowns/nostalgia-boilerplate',
+		name: 'react-nostalgia-boilerplate',
+		repo: 'https://github.com/boilertowns/react-nostalgia-boilerplate',
+	},
+	{
+		name: 'react-ui-boilerplate',
+		repo: 'https://github.com/boilertowns/react-ui-boilerplate',
 	},
 ];
