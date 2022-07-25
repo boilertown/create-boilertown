@@ -72,6 +72,12 @@ export const cliPrompt = async (): Promise<CliResults> => {
 			message: 'Select a boilerplate:',
 			choices: boilerplates,
 			skip: !!maybeBoilerplate,
+			result: (value) => {
+				if (options.boilerplate && maybeBoilerplate) {
+					return maybeBoilerplate.name;
+				}
+				return value;
+			},
 			onCancel: cancelFlow,
 		},
 	]);
