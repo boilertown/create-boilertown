@@ -30,5 +30,7 @@ pnpm create boilertowns
 
 The list of current boilerplates that you can select in Boilertowns. More will come soon.
 
-- [react-nostalgia-boilerplate](https://github.com/boilertowns/react-nostalgia-boilerplate) - Application boilerplate with React / Styled-components / React Router v6 / Babel / Webpack / Typescript.
-- [react-ui-boilerplate](https://github.com/boilertowns/react-ui-boilerplate) - UI library with React / Emotion / Rollup / Babel / Typescript.
+### React
+
+- [react-nostalgia-boilerplate](https://github.com/boilertowns/react-nostalgia-boilerplate) - Application boilerplate with Typescript, React, Styled-components, React Router v6, Babel and Webpack.
+- [react-ui-boilerplate](https://github.com/boilertowns/react-ui-boilerplate) - UI library with Typescript, React, Emotion, Rollup and Babel.
