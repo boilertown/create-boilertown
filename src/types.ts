@@ -14,4 +14,8 @@ export interface Boilerplate {
 	 * HTTP URL of repository.
 	 */
 	repo: string;
+	/**
+	 * The npm scripts to get started with the boilerplate.
+	 */
+	scripts: string[];
 }
