@@ -15,7 +15,7 @@ export interface Boilerplate {
 	 */
 	repo: string;
 	/**
-	 * The npm script to get started with the boilerplate.
+	 * The npm scripts to get started with the boilerplate.
 	 */
-	script?: string;
+	scripts: string[];
 }

@@ -9,10 +9,13 @@ interface Params {
 
 export const logNextSteps = ({ projectName, selectedBoilerplate }: Params) => {
 	const pkgManager = getPkgManagerFromAgent();
+
 	logger.succeed("\n🎉 You're all set!\n");
 	logger.info('Next steps:');
 	logger.info(`  cd ${projectName}`);
 	logger.info(`  ${pkgManager} install`);
-	logger.info(`  ${pkgManager} run ${selectedBoilerplate.script || 'dev'}`);
+	selectedBoilerplate.scripts?.forEach((script) => {
+		logger.info(`  ${pkgManager} run ${script}`);
+	});
 	logger.info(`\n`);
 };
