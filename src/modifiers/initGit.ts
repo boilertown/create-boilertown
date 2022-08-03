@@ -1,13 +1,13 @@
-import { execa } from '../utils/execa.js';
+import { execSync } from 'node:child_process';
 
 /**
  * Create a new git repo for project.
  */
-export const initGit = async (dir: string) => {
+export const initGit = (dir: string) => {
 	const gitCmd = 'git init && git branch -m main';
 
 	try {
-		await execa(gitCmd, {
+		execSync(gitCmd, {
 			cwd: dir,
 		});
 	} catch (error) {

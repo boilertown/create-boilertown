@@ -1,7 +1,7 @@
 import chalk from 'chalk';
+import { execSync } from 'node:child_process';
 import ora from 'ora';
 import type { Boilerplate } from '../types.js';
-import { execa } from '../utils/execa.js';
 
 interface Params {
 	projectDir: string;
@@ -11,7 +11,7 @@ interface Params {
 /**
  * Clone the git repo based on selected boilerplate.
  */
-export const cloneBoilerplate = async ({
+export const cloneBoilerplate = ({
 	projectDir,
 	selectedBoilerplate,
 }: Params) => {
@@ -22,7 +22,7 @@ export const cloneBoilerplate = async ({
 	).start();
 
 	try {
-		await execa(`git clone --depth 1 ${`${selectedBoilerplate.repo}.git`} .`, {
+		execSync(`git clone --depth 1 ${`${selectedBoilerplate.repo}.git`} .`, {
 			cwd: projectDir,
 		});
 	} catch (error) {

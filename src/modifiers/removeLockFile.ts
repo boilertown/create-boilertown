@@ -13,7 +13,7 @@ const LOCK_FILES = [
  * Remove lock file in the boilerplate. Let users use their own lock file
  * after installation.
  */
-export const removeLockFile = async (dir: string) => {
+export const removeLockFile = (dir: string) => {
 	for (const file of LOCK_FILES) {
 		const targetFile = path.join(dir, file);
 		if (fs.existsSync(targetFile)) {

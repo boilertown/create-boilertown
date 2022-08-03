@@ -7,10 +7,7 @@ interface Params {
 	projectName: string;
 }
 
-export const adjustPackageJson = async ({
-	projectDir,
-	projectName,
-}: Params) => {
+export const adjustPackageJson = ({ projectDir, projectName }: Params) => {
 	const packageJsonPath = path.join(projectDir, 'package.json');
 	const packageJsonContent = JSON.parse(
 		fs.readFileSync(packageJsonPath, 'utf-8'),

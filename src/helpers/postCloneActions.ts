@@ -11,9 +11,9 @@ interface Params {
 /**
  * All actions that need to be done after cloning.
  */
-export const postCloneActions = async ({ projectDir, projectName }: Params) => {
-	await removeOldGit(projectDir);
-	await initGit(projectDir);
-	await removeLockFile(projectDir);
-	await adjustPackageJson({ projectDir, projectName });
+export const postCloneActions = ({ projectDir, projectName }: Params) => {
+	removeOldGit(projectDir);
+	initGit(projectDir);
+	removeLockFile(projectDir);
+	adjustPackageJson({ projectDir, projectName });
 };
