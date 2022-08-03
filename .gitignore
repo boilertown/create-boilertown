@@ -22,6 +22,7 @@ coverage
 *.lcov
 
 # ENV files
+devcontainer.env
 .env
 
 # Mac

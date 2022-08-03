@@ -4,7 +4,9 @@
 	"name": "Node.js",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"args": { "VARIANT": "16-bullseye" }
+		"args": {
+			"VARIANT": "16-bullseye"
+		}
 	},
 
 	"customizations": {
@@ -12,6 +14,8 @@
 			"extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
 		}
 	},
+
+	"runArgs": ["--env-file", ".devcontainer/devcontainer.env"],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
