@@ -1,5 +1,11 @@
 # create-boilertowns
 
+## 0.0.4
+
+### Patch Changes
+
+- [`740b17d`](https://github.com/boilertowns/create-boilertowns/commit/740b17d6d77556609b4ff70150e1115d862c8578) Thanks [@mikunpham](https://github.com/mikunpham)! - Test release with changeset
+
 ## 0.0.3
 
 ### Patch Changes
