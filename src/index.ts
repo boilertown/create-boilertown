@@ -19,7 +19,7 @@ const main = async () => {
 	}
 
 	await scaffoldProject({ projectDir });
-	cloneBoilerplate({ projectDir, selectedBoilerplate });
+	await cloneBoilerplate({ projectDir, selectedBoilerplate });
 	postCloneActions({ projectDir, projectName });
 	logNextSteps({ projectName, selectedBoilerplate });
 };

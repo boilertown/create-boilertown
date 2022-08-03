@@ -1,7 +1,7 @@
 import chalk from 'chalk';
-import { execSync } from 'node:child_process';
 import ora from 'ora';
 import type { Boilerplate } from '../types.js';
+import { execAsync } from '../utils/execAsync.js';
 
 interface Params {
 	projectDir: string;
@@ -11,7 +11,7 @@ interface Params {
 /**
  * Clone the git repo based on selected boilerplate.
  */
-export const cloneBoilerplate = ({
+export const cloneBoilerplate = async ({
 	projectDir,
 	selectedBoilerplate,
 }: Params) => {
@@ -22,9 +22,12 @@ export const cloneBoilerplate = ({
 	).start();
 
 	try {
-		execSync(`git clone --depth 1 ${`${selectedBoilerplate.repo}.git`} .`, {
-			cwd: projectDir,
-		});
+		await execAsync(
+			`git clone --depth 1 ${`${selectedBoilerplate.repo}.git`} .`,
+			{
+				cwd: projectDir,
+			},
+		);
 	} catch (error) {
 		spinner.fail();
 		throw new Error('Could not clone the repository.');
