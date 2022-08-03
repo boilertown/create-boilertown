@@ -1,5 +1,11 @@
 # create-boilertowns
 
+## 0.0.5-next.0
+
+### Patch Changes
+
+- Test Prerelease with changeset.
+
 ## 0.0.4
 
 ### Patch Changes
