@@ -22,7 +22,8 @@
 		"build": "tsup src/index.ts --format esm --clean --minify --metafile",
 		"dev": "tsup src/index.ts --format esm --watch --clean --onSuccess \"node dist/index.js\"",
 		"format": "prettier --write \"**/*.{ts,tsx,md,mdx,json}\"",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"release": "changeset publish"
 	},
 	"dependencies": {
 		"chalk": "^5.0.1",
