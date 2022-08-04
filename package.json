@@ -23,6 +23,7 @@
 		"dev": "tsup src/index.ts --format esm --watch --clean --onSuccess \"node dist/index.js\"",
 		"format": "prettier --write \"**/*.{ts,tsx,md,mdx,json}\"",
 		"prepare": "husky install",
+		"changeset": "changeset",
 		"release": "changeset publish"
 	},
 	"dependencies": {
@@ -33,7 +34,8 @@
 		"fs-extra": "^10.1.0",
 		"gradient-string": "^2.0.1",
 		"human-id": "^4.0.0",
-		"ora": "^6.1.2"
+		"ora": "^6.1.2",
+		"sort-package-json": "^1.57.0"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "^0.4.6",

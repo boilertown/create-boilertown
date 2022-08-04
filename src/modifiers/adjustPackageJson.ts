@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { sortPackageJson } from 'sort-package-json';
 import type { PackageJson } from 'type-fest';
 
 interface Params {
@@ -9,16 +10,22 @@ interface Params {
 
 export const adjustPackageJson = ({ projectDir, projectName }: Params) => {
 	const packageJsonPath = path.join(projectDir, 'package.json');
-	const packageJsonContent = JSON.parse(
+	const packageJsonObject = JSON.parse(
 		fs.readFileSync(packageJsonPath, 'utf-8'),
 	) as PackageJson;
 
-	packageJsonContent.name = projectName;
-	packageJsonContent.version = '0.0.0';
-	packageJsonContent.repository = undefined;
+	packageJsonObject.name = projectName;
+	packageJsonObject.version = '0.0.0';
+	packageJsonObject.private = true;
+	packageJsonObject.description = '';
+	packageJsonObject.repository = {
+		type: 'git',
+		url: '',
+	};
 
-	fs.writeFileSync(
-		packageJsonPath,
-		JSON.stringify(packageJsonContent, null, 2),
+	const packageJsonContent = sortPackageJson(
+		JSON.stringify(packageJsonObject, null, 2),
 	);
+
+	fs.writeFileSync(packageJsonPath, packageJsonContent);
 };

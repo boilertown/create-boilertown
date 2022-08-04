@@ -11,4 +11,9 @@ export const boilerplates: Boilerplate[] = [
 		repo: 'https://github.com/boilertowns/react-ui-boilerplate',
 		scripts: ['storybook'],
 	},
+	{
+		name: 'react-monorepo-boilerplate',
+		repo: 'https://github.com/boilertowns/react-monorepo-boilerplate',
+		scripts: ['bootstrap', 'client dev'],
+	},
 ];
