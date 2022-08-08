@@ -1,19 +1,34 @@
-import { adjustPackageJson } from '../modifiers/adjustPackageJson.js';
-import { initGit } from '../modifiers/initGit.js';
-import { removeLockFile } from '../modifiers/removeLockFile.js';
-import { removeOldGit } from '../modifiers/removeOldGit.js';
+import {
+	adjustPackageJson,
+	initGit,
+	removeLockFile,
+	removeOldGit,
+	removeRedundantFiles,
+} from '../modifiers/common/index.js';
+import type { Modifier } from '../types.js';
 
 interface Params {
 	projectDir: string;
 	projectName: string;
+	boilerplateModifier?: Modifier;
 }
 
 /**
  * All actions that need to be done after cloning.
  */
-export const postCloneActions = ({ projectDir, projectName }: Params) => {
+export const postCloneActions = ({
+	projectDir,
+	projectName,
+	boilerplateModifier,
+}: Params) => {
 	removeOldGit(projectDir);
-	initGit(projectDir);
 	removeLockFile(projectDir);
+	removeRedundantFiles(projectDir);
 	adjustPackageJson({ projectDir, projectName });
+
+	if (boilerplateModifier) {
+		boilerplateModifier();
+	}
+
+	initGit(projectDir);
 };
