@@ -18,7 +18,7 @@ export const cloneBoilerplate = async ({
 	const spinner = ora(
 		`Creating project by cloning ${chalk.yellow(
 			selectedBoilerplate.name,
-		)} from ${chalk.underline(selectedBoilerplate.repo)}\n`,
+		)} from ${chalk.underline(selectedBoilerplate.repo)}`,
 	).start();
 
 	try {

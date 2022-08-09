@@ -1,7 +1,7 @@
+import ora from 'ora';
 import {
 	adjustPackageJson,
 	initGit,
-	removeLockFile,
 	removeOldGit,
 	removeRedundantFiles,
 } from '../modifiers/common/index.js';
@@ -21,14 +21,15 @@ export const postCloneActions = ({
 	projectName,
 	boilerplateModifier,
 }: Params) => {
+	const spinner = ora('Preparing a new codebase for you 🍽').start();
+
 	removeOldGit(projectDir);
-	removeLockFile(projectDir);
 	removeRedundantFiles(projectDir);
 	adjustPackageJson({ projectDir, projectName });
-
 	if (boilerplateModifier) {
-		boilerplateModifier({ projectDir });
+		boilerplateModifier({ projectDir, projectName });
 	}
-
 	initGit(projectDir);
+
+	spinner.succeed();
 };
