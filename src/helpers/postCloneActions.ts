@@ -27,7 +27,7 @@ export const postCloneActions = ({
 	adjustPackageJson({ projectDir, projectName });
 
 	if (boilerplateModifier) {
-		boilerplateModifier();
+		boilerplateModifier({ projectDir });
 	}
 
 	initGit(projectDir);

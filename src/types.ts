@@ -5,7 +5,12 @@ export interface CliResults {
 	boilerplate: string;
 }
 
-export type Modifier = () => void;
+interface ModifierParams {
+	projectDir: string;
+	projectName: string;
+}
+
+export type Modifier = (params: ModifierParams) => void;
 
 export interface Boilerplate {
 	/**

@@ -19,7 +19,7 @@ export const packageJSON = {
 	 * Get package version.
 	 */
 	get version() {
-		const packageJsonContent = packageJSON.getContent();
+		const packageJsonContent = this.getContent();
 		const { version } = packageJsonContent;
 		return version || '0.0.0';
 	},
