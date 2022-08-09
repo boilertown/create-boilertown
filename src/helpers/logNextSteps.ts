@@ -8,14 +8,14 @@ interface Params {
 }
 
 export const logNextSteps = ({ projectName, selectedBoilerplate }: Params) => {
-	const pkgManager = getPkgManagerFromAgent();
+	const { pkgManagerName } = getPkgManagerFromAgent();
 
 	logger.succeed("\n🎉 You're all set!\n");
 	logger.info('Next steps:');
 	logger.info(`  cd ${projectName}`);
-	logger.info(`  ${pkgManager} install`);
+	logger.info(`  ${pkgManagerName} install`);
 	selectedBoilerplate.scripts?.forEach((script) => {
-		logger.info(`  ${pkgManager} run ${script}`);
+		logger.info(`  ${pkgManagerName} run ${script}`);
 	});
 	logger.info(`\n`);
 };
