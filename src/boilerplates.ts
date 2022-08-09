@@ -18,6 +18,6 @@ export const boilerplates: Boilerplate[] = [
 		name: 'react-monorepo-boilerplate',
 		repo: 'https://github.com/boilertowns/react-monorepo-boilerplate',
 		modifier: reactMonorepoBoilerplateModifier,
-		scripts: ['bootstrap', 'dev'],
+		scripts: ['build', 'dev'],
 	},
 ];

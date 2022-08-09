@@ -10,23 +10,32 @@ import { getPkgManagerFromAgent } from '../../utils/getPkgManagerFromAgent.js';
  * Custom modifier of https://github.com/boilertowns/react-monorepo-boilerplate
  */
 export const reactMonorepoBoilerplateModifier: Modifier = ({ projectDir }) => {
-	const pkgManager = getPkgManagerFromAgent();
+	const { pkgManagerName, pkgManagerVersion } = getPkgManagerFromAgent();
 	const rootPackageJsonPath = path.join(projectDir, 'package.json');
 	const rootPackageJsonContent = JSON.parse(
 		fs.readFileSync(rootPackageJsonPath, 'utf-8'),
 	) as PackageJson;
-	const workspaces = rootPackageJsonContent.workspaces as string[];
+
+	(rootPackageJsonContent as any).packageManager = pkgManagerVersion
+		? `${pkgManagerName}@${pkgManagerVersion}`
+		: `${pkgManagerName}`;
+
+	fs.writeFileSync(
+		rootPackageJsonPath,
+		sortPackageJson(JSON.stringify(rootPackageJsonContent, null, 2)),
+	);
 
 	/**
 	 * The original boilerplate is using `pnpm`. CLI need to modify this to support
 	 * `npm` and `yarn` properly.
 	 */
-	if (pkgManager !== 'pnpm') {
+	if (pkgManagerName !== 'pnpm') {
 		const pnpmWorkspaceFilePath = path.join(projectDir, 'pnpm-workspace.yaml');
 		fs.rmSync(pnpmWorkspaceFilePath, {
 			force: true,
 		});
 
+		const workspaces = rootPackageJsonContent.workspaces as string[];
 		const patterns = workspaces.map(
 			(workspace) => `${projectDir}/${workspace}/package.json`,
 		);
