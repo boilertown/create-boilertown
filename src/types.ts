@@ -5,6 +5,13 @@ export interface CliResults {
 	boilerplate: string;
 }
 
+interface ModifierParams {
+	projectDir: string;
+	projectName: string;
+}
+
+export type Modifier = (params: ModifierParams) => void;
+
 export interface Boilerplate {
 	/**
 	 * Name of the repository.
@@ -18,4 +25,8 @@ export interface Boilerplate {
 	 * The npm scripts to get started with the boilerplate.
 	 */
 	scripts: string[];
+	/**
+	 * Specific modifier for each boilerplate.
+	 */
+	modifier?: Modifier;
 }

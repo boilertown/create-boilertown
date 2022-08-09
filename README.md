@@ -17,7 +17,7 @@ To start scaffolding your project, run any of the following three commands and a
 
 ```bash
 # npm
-npm create boilertowns
+npm create boilertowns@latest
 
 # yarn
 yarn create boilertowns

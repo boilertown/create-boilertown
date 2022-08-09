@@ -1,6 +1,6 @@
 {
 	"name": "create-boilertowns",
-	"version": "0.0.5-next.0",
+	"version": "0.0.5-next.1",
 	"description": "The ultimate boilerplate generator for your project.",
 	"author": "mikunpham <mikun1993@gmail.com>",
 	"license": "MIT",
@@ -23,6 +23,7 @@
 		"dev": "tsup src/index.ts --format esm --watch --clean --onSuccess \"node dist/index.js\"",
 		"format": "prettier --write \"**/*.{ts,tsx,md,mdx,json}\"",
 		"prepare": "husky install",
+		"changeset": "changeset",
 		"release": "changeset publish"
 	},
 	"dependencies": {
@@ -31,9 +32,11 @@
 		"enquirer": "^2.3.6",
 		"figlet": "^1.5.2",
 		"fs-extra": "^10.1.0",
+		"globby": "^13.1.2",
 		"gradient-string": "^2.0.1",
 		"human-id": "^4.0.0",
-		"ora": "^6.1.2"
+		"ora": "^6.1.2",
+		"sort-package-json": "^1.57.0"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "^0.4.6",
