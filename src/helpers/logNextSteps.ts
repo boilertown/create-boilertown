@@ -17,5 +17,5 @@ export const logNextSteps = ({ projectName, selectedBoilerplate }: Params) => {
 	selectedBoilerplate.scripts?.forEach((script) => {
 		logger.info(`  ${pkgManagerName} run ${script}`);
 	});
-	logger.info(`\n`);
+	logger.info('\n');
 };
