@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const REDUNDANT_FILES = [
+	'.git',
 	'LICENSE',
 	'package-lock.json',
 	'yarn.lock',
@@ -10,7 +11,7 @@ const REDUNDANT_FILES = [
 	'bun.lockb',
 ];
 
-export const removeRedundantFiles = (dir: string) => {
+export const cleanupFiles = (dir: string) => {
 	for (const file of REDUNDANT_FILES) {
 		const targetFile = path.join(dir, file);
 		if (fs.existsSync(targetFile)) {
