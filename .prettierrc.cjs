@@ -7,7 +7,13 @@ module.exports = {
 	"trailingComma": "all",
 	"useTabs": true,
 	"plugins": [require.resolve("@trivago/prettier-plugin-sort-imports")],
-	"importOrder": ["^[./]"],
+	"importOrder": [
+		"^cli-actions/(.*)$",
+		"^modifiers/(.*)$",
+		"^utils/(.*)$",
+		"^types/(.*)$",
+		"^[./]",
+	],
 	"importOrderSeparation": false,
 	"importOrderSortSpecifiers": true,
 	"importOrderCaseInsensitive": true

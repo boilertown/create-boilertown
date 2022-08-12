@@ -2,7 +2,7 @@ import { globbySync } from 'globby';
 import fs from 'node:fs';
 import path from 'node:path';
 import YAML from 'yaml';
-import { getPkgManagerFromAgent } from '../../utils/getPkgManagerFromAgent.js';
+import { getPkgManagerFromAgent } from 'utils/getPkgManagerFromAgent.js';
 
 /**
  * Modify GitHub Actions files.

@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import ora from 'ora';
-import type { Boilerplate } from '../types.js';
-import { execAsync } from '../utils/execAsync.js';
+import { execAsync } from 'utils/execAsync.js';
+import type { Boilerplate } from 'types/index.js';
 
 interface Params {
 	projectDir: string;

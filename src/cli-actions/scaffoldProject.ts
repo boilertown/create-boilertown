@@ -2,9 +2,9 @@ import chalk from 'chalk';
 import enquirer from 'enquirer';
 import fs from 'node:fs';
 import ora from 'ora';
+import { cleanupDir } from 'utils/cleanupDir.js';
+import type { CliResults } from 'types/index.js';
 import { ABORT_MESSAGE } from '../constants.js';
-import { CliResults } from '../types.js';
-import { cleanupDir } from '../utils/cleanupDir.js';
 
 interface Params {
 	projectDir: string;
@@ -22,6 +22,7 @@ export const scaffoldProject = async ({ projectDir }: Params) => {
 		fs.mkdirSync(projectDir);
 	} else {
 		const files = fs.readdirSync(projectDir);
+
 		if (files.length) {
 			spinner.stopAndPersist();
 			const { shouldOverwrite } = await enquirer.prompt<
