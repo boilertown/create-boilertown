@@ -1,8 +1,8 @@
+import boilerplates from 'boilerplates/index.js';
 import chalk from 'chalk';
 import { Command } from 'commander';
 import enquirer from 'enquirer';
 import path from 'node:path';
-import { getAllBoilerplates } from 'utils/getAllBoilerplates.js';
 import { logger } from 'utils/logger.js';
 import { packageJSON } from 'utils/packageJSON.js';
 import { convertToValidPackageName } from 'utils/packageName.js';
@@ -15,8 +15,6 @@ const cancelFlow = () => {
 };
 
 export const cliPrompt = async (): Promise<CliResults> => {
-	const boilerplates = await getAllBoilerplates();
-
 	const program = new Command();
 
 	program

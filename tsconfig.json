@@ -27,6 +27,7 @@
 		"isolatedModules": true,
 		"allowJs": false,
 
+		/* MODULE ALIAS */
 		"baseUrl": "./",
 		"paths": {
 			"*": ["src/*"]
