@@ -1,6 +1,6 @@
 {
 	"name": "create-boilertowns",
-	"version": "0.0.5-next.3",
+	"version": "0.0.5-next.4",
 	"description": "The ultimate boilerplate generator for your project.",
 	"author": "mikunpham <mikun1993@gmail.com>",
 	"license": "MIT",
@@ -34,9 +34,9 @@
 		"fs-extra": "^10.1.0",
 		"globby": "^13.1.2",
 		"gradient-string": "^2.0.1",
-		"human-id": "^4.0.0",
 		"ora": "^6.1.2",
-		"sort-package-json": "^1.57.0"
+		"sort-package-json": "^1.57.0",
+		"yaml": "^2.1.1"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "^0.4.6",

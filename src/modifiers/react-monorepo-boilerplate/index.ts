@@ -5,6 +5,7 @@ import { sortPackageJson } from 'sort-package-json';
 import type { PackageJson } from 'type-fest';
 import type { Modifier } from '../../types.js';
 import { getPkgManagerFromAgent } from '../../utils/getPkgManagerFromAgent.js';
+import { modifyGithubActions } from '../common/modifyGithubActions.js';
 
 /**
  * Custom modifier of https://github.com/boilertowns/react-monorepo-boilerplate
@@ -20,35 +21,51 @@ export const reactMonorepoBoilerplateModifier: Modifier = ({ projectDir }) => {
 		? `${pkgManagerName}@${pkgManagerVersion}`
 		: `${pkgManagerName}`;
 
-	fs.writeFileSync(
-		rootPackageJsonPath,
-		sortPackageJson(JSON.stringify(rootPackageJsonContent, null, 2)),
+	const workspaces = rootPackageJsonContent.workspaces as string[];
+	const patterns = workspaces.map(
+		(workspace) => `${projectDir}/${workspace}/package.json`,
 	);
+	// rootDir/apps/*/package.json
+	// rootDir/packages/*/package.json
+	const packageJsonFiles = globbySync(patterns);
 
 	/**
 	 * The original boilerplate is using `pnpm`. CLI need to modify this to support
 	 * `npm` and `yarn` properly.
 	 */
 	if (pkgManagerName !== 'pnpm') {
+		/**
+		 * Remove `pnpm-workspace.yaml`
+		 */
 		const pnpmWorkspaceFilePath = path.join(projectDir, 'pnpm-workspace.yaml');
-		fs.rmSync(pnpmWorkspaceFilePath, {
-			force: true,
-		});
+		if (fs.existsSync(pnpmWorkspaceFilePath)) {
+			fs.rmSync(pnpmWorkspaceFilePath, {
+				force: true,
+			});
+		}
 
-		const workspaces = rootPackageJsonContent.workspaces as string[];
-		const patterns = workspaces.map(
-			(workspace) => `${projectDir}/${workspace}/package.json`,
-		);
-		const packageJsonFiles = globbySync(patterns);
-
+		/**
+		 * Replace packages in workspace version from "workspace:*" to  "*"
+		 */
 		for (const packageJsonPath of packageJsonFiles) {
 			const packageJsonContent = fs.readFileSync(packageJsonPath, {
 				encoding: 'utf-8',
 			});
+
 			const newPackageJsonContent = sortPackageJson(
 				packageJsonContent.replace(/workspace:\*/g, '*'),
 			);
+
 			fs.writeFileSync(packageJsonPath, newPackageJsonContent);
 		}
+
+		modifyGithubActions(projectDir);
+	} else {
+		rootPackageJsonContent.workspaces = undefined;
 	}
+
+	fs.writeFileSync(
+		rootPackageJsonPath,
+		sortPackageJson(JSON.stringify(rootPackageJsonContent, null, 2)),
+	);
 };
