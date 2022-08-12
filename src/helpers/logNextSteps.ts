@@ -10,7 +10,7 @@ interface Params {
 export const logNextSteps = ({ projectName, selectedBoilerplate }: Params) => {
 	const { pkgManagerName } = getPkgManagerFromAgent();
 
-	logger.succeed("\n🎉 You're all set!\n");
+	logger.succeed('\n🚀 Your codebase is ready!\n');
 	logger.info('Next steps:');
 	logger.info(`  cd ${projectName}`);
 	logger.info(`  ${pkgManagerName} install`);

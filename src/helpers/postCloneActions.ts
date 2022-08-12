@@ -20,7 +20,7 @@ export const postCloneActions = ({
 	projectName,
 	boilerplateModifier,
 }: Params) => {
-	const spinner = ora('Preparing a new codebase for you 🍽').start();
+	const spinner = ora('Preparing a new codebase for you...').start();
 
 	cleanupFiles(projectDir);
 	adjustPackageJson({ projectDir, projectName });

@@ -1,10 +1,9 @@
 import chalk from 'chalk';
 import { Command } from 'commander';
 import enquirer from 'enquirer';
-import { humanId } from 'human-id';
 import path from 'node:path';
 import { boilerplates } from '../boilerplates.js';
-import { ABORT_MESSAGE, APP_NAME } from '../constants.js';
+import { ABORT_MESSAGE, APP_NAME, DEFAULT_NAME } from '../constants.js';
 import type { CliResults } from '../types.js';
 import { logger } from '../utils/logger.js';
 import { packageJSON } from '../utils/packageJSON.js';
@@ -37,10 +36,7 @@ export const cliPrompt = async (): Promise<CliResults> => {
 	program.parse(process.argv);
 
 	const cliProjectName = program.args[0];
-	const randomDefaultName = humanId({
-		separator: '-',
-		capitalize: false,
-	});
+	const randomDefaultName = DEFAULT_NAME;
 
 	const options = program.opts();
 	const boilerplateNameFromCLI = options.boilerplate;
