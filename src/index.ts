@@ -1,6 +1,6 @@
 #! /usr/bin/env node
-import boilerplates from 'boilerplates/index.js';
 import process from 'node:process';
+import boilerplates from 'boilerplates/index.js';
 import { cliPrompt } from 'cli-actions/cliPrompt.js';
 import { cloneBoilerplate } from 'cli-actions/cloneBoilerplate.js';
 import { logNextSteps } from 'cli-actions/logNextSteps.js';
