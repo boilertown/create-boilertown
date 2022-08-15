@@ -11,10 +11,7 @@ interface Params {
 /**
  * Clone the git repo based on selected boilerplate.
  */
-export const cloneBoilerplate = async ({
-	projectDir,
-	selectedBoilerplate,
-}: Params) => {
+export const clone = async ({ projectDir, selectedBoilerplate }: Params) => {
 	const spinner = ora(
 		`Creating project by cloning ${chalk.yellow(
 			selectedBoilerplate.name,
@@ -29,6 +26,7 @@ export const cloneBoilerplate = async ({
 			},
 		);
 	} catch (error) {
+		console.log(error.message);
 		spinner.fail();
 		throw new Error('Could not clone the repository.');
 	}

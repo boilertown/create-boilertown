@@ -2,10 +2,10 @@
 import process from 'node:process';
 import boilerplates from 'boilerplates/index.js';
 import { cliPrompt } from 'cli-actions/cliPrompt.js';
-import { cloneBoilerplate } from 'cli-actions/cloneBoilerplate.js';
+import { clone } from 'cli-actions/clone.js';
 import { logNextSteps } from 'cli-actions/logNextSteps.js';
-import { postCloneActions } from 'cli-actions/postCloneActions.js';
-import { scaffoldProject } from 'cli-actions/scaffoldProject.js';
+import { postActions } from 'cli-actions/postActions.js';
+import { scaffold } from 'cli-actions/scaffold.js';
 import { logger } from 'utils/logger.js';
 import { renderTitle } from 'utils/renderTitle.js';
 
@@ -19,9 +19,9 @@ const main = async () => {
 		throw new Error('The selected boilerplate does not exist.');
 	}
 
-	await scaffoldProject({ projectDir });
-	await cloneBoilerplate({ projectDir, selectedBoilerplate });
-	await postCloneActions({
+	await scaffold({ projectDir });
+	await clone({ projectDir, selectedBoilerplate });
+	await postActions({
 		projectDir,
 		projectName,
 		boilerplateModifier: selectedBoilerplate.modifier,

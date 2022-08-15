@@ -11,7 +11,7 @@ interface Params {
 /**
  * All actions that need to be done after cloning.
  */
-export const postCloneActions = async ({
+export const postActions = async ({
 	projectDir,
 	projectName,
 	boilerplateModifier,

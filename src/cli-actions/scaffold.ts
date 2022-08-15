@@ -13,7 +13,7 @@ interface Params {
 /**
  * Start scaffolding project.
  */
-export const scaffoldProject = async ({ projectDir }: Params) => {
+export const scaffold = async ({ projectDir }: Params) => {
 	const spinner = ora(
 		`Scaffolding project in ${chalk.cyan(projectDir)}`,
 	).start();
