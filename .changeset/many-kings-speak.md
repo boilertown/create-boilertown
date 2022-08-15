@@ -2,4 +2,4 @@
 'create-boilertowns': patch
 ---
 
-Test Prerelease with changeset.
+New release with code changes and internal `boilerplate:add` script.
