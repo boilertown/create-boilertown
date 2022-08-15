@@ -1,24 +1,42 @@
 import chalk from 'chalk';
 import enquirer from 'enquirer';
+import handlebars from 'handlebars';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 import prettier from 'prettier';
 
-function indexFileContent({ name, repo, scripts }) {
-	const content = `
-import type { Boilerplate } from 'types/index.js';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const boilerplates: Boilerplate = {
-	name: '${name}',
-	repo: '${repo}',
-	scripts: [${scripts.map((s) => `'${s}'`).join(',')}],
-};
+async function indexFileContent({ name, repo, scripts }) {
+	const templateDir = path.resolve(__dirname, 'templates/index.ts.hbs');
+	const content = await fs.readFile(templateDir, 'utf-8');
+	const template = handlebars.compile(content);
 
-export default boilerplates;
-`;
+	return prettier.format(
+		template({
+			name,
+			repo,
+			scripts,
+		}),
+		{
+			parser: 'babel',
+			semi: true,
+			singleQuote: true,
+			useTabs: true,
+			tabWidth: 2,
+			trailingComma: 'all',
+		},
+	);
+}
 
-	return prettier.format(content, {
+async function modifierFileContent({ repo }) {
+	const templateDir = path.resolve(__dirname, 'templates/modifier.ts.hbs');
+	const content = await fs.readFile(templateDir, 'utf-8');
+	const template = handlebars.compile(content);
+
+	return prettier.format(template({ repo }), {
 		parser: 'babel',
 		semi: true,
 		singleQuote: true,
@@ -80,11 +98,14 @@ const boilerplatesDir = path.resolve(process.cwd(), 'src/boilerplates');
 
 		await fs.mkdir(dir);
 
-		await fs.writeFile(
-			`${dir}/index.ts`,
-			indexFileContent({ name, repo, scripts }),
-			'utf-8',
-		);
+		const indexContent = await indexFileContent({
+			name,
+			repo,
+			scripts,
+		});
+		const modifierContent = await modifierFileContent({ repo });
+		await fs.writeFile(`${dir}/index.ts`, indexContent, 'utf-8');
+		await fs.writeFile(`${dir}/modifier.ts`, modifierContent, 'utf-8');
 
 		console.log(
 			`\n👍 Awesome!, ${chalk.green(name)} was added to ${chalk.inverse(
