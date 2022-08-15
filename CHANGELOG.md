@@ -1,5 +1,11 @@
 # create-boilertowns
 
+## 0.0.5
+
+### Patch Changes
+
+- [`520e5bb`](https://github.com/boilertowns/create-boilertowns/commit/520e5bbb0a781d436e79794a5ef33bc7fa681147) Thanks [@mikunpham](https://github.com/mikunpham)! - New release with code changes and internal `boilerplate:add` script.
+
 ## 0.0.5-next.0
 
 ### Patch Changes
