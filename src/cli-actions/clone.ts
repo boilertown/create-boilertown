@@ -13,9 +13,7 @@ interface Params {
  */
 export const clone = async ({ projectDir, selectedBoilerplate }: Params) => {
 	const spinner = ora(
-		`Creating project by cloning ${chalk.yellow(
-			selectedBoilerplate.name,
-		)} from ${chalk.underline(selectedBoilerplate.repo)}`,
+		`Creating project based on ${chalk.underline(selectedBoilerplate.repo)}`,
 	).start();
 
 	try {
