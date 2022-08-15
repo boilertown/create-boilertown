@@ -1,6 +1,6 @@
-import type { Boilerplate } from '../types.js';
-import { getPkgManagerFromAgent } from '../utils/getPkgManagerFromAgent.js';
-import { logger } from '../utils/logger.js';
+import { getPkgManagerFromAgent } from 'utils/getPkgManagerFromAgent.js';
+import { logger } from 'utils/logger.js';
+import type { Boilerplate } from 'types/index.js';
 
 interface Params {
 	projectName: string;

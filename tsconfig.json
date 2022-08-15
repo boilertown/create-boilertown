@@ -25,7 +25,13 @@
 		"useDefineForClassFields": true,
 		"skipLibCheck": true,
 		"isolatedModules": true,
-		"allowJs": false
+		"allowJs": false,
+
+		/* MODULE ALIAS */
+		"baseUrl": "./",
+		"paths": {
+			"*": ["src/*"]
+		}
 	},
 	"include": ["src"],
 	"exclude": ["node_modules", "dist"]

@@ -1,10 +1,6 @@
 import ora from 'ora';
-import {
-	adjustPackageJson,
-	cleanupFiles,
-	initGit,
-} from '../modifiers/common/index.js';
-import type { Modifier } from '../types.js';
+import { cleanupFiles, initGit, modifyPackageJson } from 'modifiers/index.js';
+import { Modifier } from 'types/index.js';
 
 interface Params {
 	projectDir: string;
@@ -15,7 +11,7 @@ interface Params {
 /**
  * All actions that need to be done after cloning.
  */
-export const postCloneActions = ({
+export const postActions = async ({
 	projectDir,
 	projectName,
 	boilerplateModifier,
@@ -23,7 +19,7 @@ export const postCloneActions = ({
 	const spinner = ora('Preparing a new codebase for you...').start();
 
 	cleanupFiles(projectDir);
-	adjustPackageJson({ projectDir, projectName });
+	modifyPackageJson({ projectDir, projectName });
 
 	if (boilerplateModifier) {
 		boilerplateModifier({ projectDir, projectName });

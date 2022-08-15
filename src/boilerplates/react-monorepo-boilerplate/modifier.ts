@@ -3,14 +3,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { sortPackageJson } from 'sort-package-json';
 import type { PackageJson } from 'type-fest';
-import type { Modifier } from '../../types.js';
-import { getPkgManagerFromAgent } from '../../utils/getPkgManagerFromAgent.js';
-import { modifyGithubActions } from '../common/modifyGithubActions.js';
+import { modifyGithubActions } from 'modifiers/index.js';
+import { getPkgManagerFromAgent } from 'utils/getPkgManagerFromAgent.js';
+import type { Modifier } from 'types/index.js';
 
 /**
  * Custom modifier of https://github.com/boilertowns/react-monorepo-boilerplate
  */
-export const reactMonorepoBoilerplateModifier: Modifier = ({ projectDir }) => {
+export const modifier: Modifier = ({ projectDir }) => {
 	const { pkgManagerName, pkgManagerVersion } = getPkgManagerFromAgent();
 	const rootPackageJsonPath = path.join(projectDir, 'package.json');
 	const rootPackageJsonContent = JSON.parse(

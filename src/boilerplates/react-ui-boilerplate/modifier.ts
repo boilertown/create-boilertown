@@ -1,11 +1,11 @@
-import type { Modifier } from '../../types.js';
-import { getPkgManagerFromAgent } from '../../utils/getPkgManagerFromAgent.js';
-import { modifyGithubActions } from '../common/modifyGithubActions.js';
+import { modifyGithubActions } from 'modifiers/index.js';
+import { getPkgManagerFromAgent } from 'utils/getPkgManagerFromAgent.js';
+import type { Modifier } from 'types/index.js';
 
 /**
  * Custom modifier of https://github.com/boilertowns/react-ui-boilerplate
  */
-export const reactUiBoilerplateModifier: Modifier = ({ projectDir }) => {
+export const modifier: Modifier = ({ projectDir }) => {
 	const { pkgManagerName } = getPkgManagerFromAgent();
 
 	/**

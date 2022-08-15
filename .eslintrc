@@ -1,22 +1,24 @@
 {
 	"root": true,
-	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"sourceType": "module"
 	},
-	"extends": [
-		"eslint:recommended",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:prettier/recommended"
-	],
-	"plugins": ["@typescript-eslint"],
+	"extends": ["eslint:recommended", "plugin:prettier/recommended"],
 	"env": {
 		"node": true,
 		"es2022": true,
 		"jest": true
 	},
-	"rules": {
-		"@typescript-eslint/ban-ts-comment": "warn",
-		"@typescript-eslint/explicit-module-boundary-types": "off"
-	}
+	"overrides": [
+		{
+			"files": ["*.ts"],
+			"parser": "@typescript-eslint/parser",
+			"extends": ["plugin:@typescript-eslint/recommended"],
+			"plugins": ["@typescript-eslint"],
+			"rules": {
+				"@typescript-eslint/ban-ts-comment": "warn",
+				"@typescript-eslint/explicit-module-boundary-types": "off"
+			}
+		}
+	]
 }

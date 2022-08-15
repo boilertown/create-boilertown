@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 /**
- * Remove files and directories inside `dir`.
+ * Remove files and directories inside target `dir`.
  */
 export const cleanupDir = (dir: string) => {
 	if (!fs.existsSync(dir)) {

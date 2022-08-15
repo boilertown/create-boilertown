@@ -7,5 +7,11 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"typescript.preferences.importModuleSpecifierEnding": "js",
 	"typescript.suggest.autoImports": true,
-	"typescript.tsdk": "node_modules/typescript/lib"
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[handlebars]": {
+		"editor.formatOnSave": false
+	}
 }

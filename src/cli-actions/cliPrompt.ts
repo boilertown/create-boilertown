@@ -2,12 +2,12 @@ import chalk from 'chalk';
 import { Command } from 'commander';
 import enquirer from 'enquirer';
 import path from 'node:path';
-import { boilerplates } from '../boilerplates.js';
+import boilerplates from 'boilerplates/index.js';
+import { logger } from 'utils/logger.js';
+import { packageJSON } from 'utils/packageJSON.js';
+import { convertToValidPackageName } from 'utils/packageName.js';
+import type { CliResults } from 'types/index.js';
 import { ABORT_MESSAGE, APP_NAME, DEFAULT_NAME } from '../constants.js';
-import type { CliResults } from '../types.js';
-import { logger } from '../utils/logger.js';
-import { packageJSON } from '../utils/packageJSON.js';
-import { convertToValidPackageName } from '../utils/packageName.js';
 
 const cancelFlow = () => {
 	logger.error(ABORT_MESSAGE);
