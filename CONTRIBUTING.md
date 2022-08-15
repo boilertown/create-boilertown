@@ -1,8 +1,6 @@
 # Contributing to Boilertowns
 
-Hi! Thank you for your interest in Boilertowns! Your contributions are very welcome and valuable to Boilertowns ❤️
-
-Before submitting your contribution, please make sure to take a moment and read through the following guide:
+Hi! Thank you for your interest in Boilertowns! Your contributions are very welcome and valuable to Boilertowns ❤️ Before submitting your contribution, please make sure to take a moment and read through the following guide:
 
 ## Setup
 
@@ -29,6 +27,11 @@ Before submitting your contribution, please make sure to take a moment and read 
 
 ## Add a new boilerplate
 
+> Please note these when creating a pull request:
+>
+> 1. Only add 1 boilerplate per pull reuqest.
+> 2. If the boilerplate is not yours, help me inform its authors/maintainers by tagging them in your pull request description.
+
 - You can add your favourite boilerplate by simply running command:
 
   ```sh
@@ -44,9 +47,9 @@ Before submitting your contribution, please make sure to take a moment and read 
   ```
 
 - Commit all the changes to GitHub.
-- Open a pull request and wait for approval.
+- Open a pull request and wait for approval. All pull requests must be made to the `main` branch.
 
-## CLI Development
+## CLI development
 
 - You can start developing `create-boilertowns` locally by runing:
 
@@ -61,4 +64,4 @@ Before submitting your contribution, please make sure to take a moment and read 
   ```
 
 - Commit your changes.
-- Open a pull request and wait for approval.
+- Open a pull request and wait for approval. All pull requests must be made to the `main` branch.
