@@ -43,7 +43,7 @@ Hi! Thank you for your interest in Boilertowns! Your contributions are very welc
 - Create changeset file and write a summary:
 
   ```sh
-  pnpm changeset
+  pnpm run changeset
   ```
 
 - Commit all the changes to GitHub.
@@ -60,7 +60,7 @@ Hi! Thank you for your interest in Boilertowns! Your contributions are very welc
 - Create changeset file and write a summary:
 
   ```sh
-  pnpm changeset
+  pnpm run changeset
   ```
 
 - Commit your changes.
