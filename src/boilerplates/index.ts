@@ -13,7 +13,7 @@ import reactNostalgiaBoilerplate from './react-nostalgia-boilerplate/index.js';
 import reactUiBoilerplate from './react-ui-boilerplate/index.js';
 
 export default [
-	reactNostalgiaBoilerplate,
 	reactMonorepoBoilerplate,
+	reactNostalgiaBoilerplate,
 	reactUiBoilerplate,
 ];
