@@ -7,11 +7,8 @@ import { logNextSteps } from 'cli-actions/logNextSteps.js';
 import { postActions } from 'cli-actions/postActions.js';
 import { scaffold } from 'cli-actions/scaffold.js';
 import { logger } from 'utils/logger.js';
-import { renderTitle } from 'utils/renderTitle.js';
 
 const main = async () => {
-	renderTitle();
-
 	const { projectName, projectDir, boilerplate } = await cliPrompt();
 	const selectedBoilerplate = boilerplates.find((b) => b.name === boilerplate);
 

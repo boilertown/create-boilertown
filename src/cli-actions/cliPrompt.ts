@@ -6,8 +6,9 @@ import boilerplates from 'boilerplates/index.js';
 import { logger } from 'utils/logger.js';
 import { packageJSON } from 'utils/packageJSON.js';
 import { convertToValidPackageName } from 'utils/packageName.js';
+import { renderTitle } from 'utils/renderTitle.js';
 import type { CliResults } from 'types/index.js';
-import { ABORT_MESSAGE, APP_NAME, DEFAULT_NAME } from '../constants.js';
+import { ABORT_MESSAGE, APP_NAME, DEFAULT_PROJECT_NAME } from '../constants.js';
 
 const cancelFlow = () => {
 	logger.error(ABORT_MESSAGE);
@@ -18,7 +19,7 @@ export const cliPrompt = async (): Promise<CliResults> => {
 	const program = new Command();
 
 	program
-		.name(APP_NAME.toLowerCase())
+		.name(APP_NAME)
 		.description('⚡️ The ultimate CLI to generate project boilerplate.');
 
 	program
@@ -50,12 +51,14 @@ export const cliPrompt = async (): Promise<CliResults> => {
 		);
 	}
 
+	renderTitle();
+
 	const answers = await enquirer.prompt<CliResults>([
 		{
 			name: 'projectName',
 			type: 'input',
 			message: 'Project name:',
-			initial: cliProjectName || DEFAULT_NAME,
+			initial: cliProjectName || DEFAULT_PROJECT_NAME,
 			skip: !!cliProjectName,
 			result: (value) => convertToValidPackageName(value),
 			onCancel: cancelFlow,
