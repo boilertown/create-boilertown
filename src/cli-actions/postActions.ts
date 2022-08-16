@@ -1,5 +1,10 @@
 import ora from 'ora';
-import { cleanupFiles, initGit, modifyPackageJson } from 'modifiers/index.js';
+import {
+	cleanupFiles,
+	initGit,
+	modifyHusky,
+	modifyPackageJson,
+} from 'modifiers/index.js';
 import { Modifier } from 'types/index.js';
 
 interface Params {
@@ -20,6 +25,7 @@ export const postActions = async ({
 
 	cleanupFiles(projectDir);
 	modifyPackageJson({ projectDir, projectName });
+	modifyHusky(projectDir);
 
 	if (boilerplateModifier) {
 		boilerplateModifier({ projectDir, projectName });

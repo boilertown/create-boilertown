@@ -1,9 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const FILES_OR_DIR_TO_REMOVE = [
+const TO_BE_REMOVED = [
 	'.git',
 	'LICENSE',
+	'CONTRIBUTING',
 	'package-lock.json',
 	'yarn.lock',
 	'npm-shrinkwrap.json',
@@ -12,7 +13,7 @@ const FILES_OR_DIR_TO_REMOVE = [
 ];
 
 export const cleanupFiles = (dir: string) => {
-	for (const file of FILES_OR_DIR_TO_REMOVE) {
+	for (const file of TO_BE_REMOVED) {
 		const target = path.join(dir, file);
 
 		if (!fs.existsSync(target)) {
