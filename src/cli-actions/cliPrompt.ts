@@ -36,8 +36,6 @@ export const cliPrompt = async (): Promise<CliResults> => {
 	program.parse(process.argv);
 
 	const cliProjectName = program.args[0];
-	const randomDefaultName = DEFAULT_NAME;
-
 	const options = program.opts();
 	const boilerplateNameFromCLI = options.boilerplate;
 	const maybeBoilerplate = boilerplates.find(
@@ -57,7 +55,7 @@ export const cliPrompt = async (): Promise<CliResults> => {
 			name: 'projectName',
 			type: 'input',
 			message: 'Project name:',
-			initial: cliProjectName || randomDefaultName,
+			initial: cliProjectName || DEFAULT_NAME,
 			skip: !!cliProjectName,
 			result: (value) => convertToValidPackageName(value),
 			onCancel: cancelFlow,
