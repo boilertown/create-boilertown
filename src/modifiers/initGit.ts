@@ -12,7 +12,7 @@ export const initGit = (dir: string) => {
 	const versionMinor = gitVersion.split('.')[1];
 
 	if (parseInt(versionMajor) < 2 || parseInt(versionMinor) < 28) {
-		gitCmd = 'git init && git branch -m main';
+		gitCmd = 'git init && git branch -M main';
 	}
 
 	try {
