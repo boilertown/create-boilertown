@@ -1,12 +1,9 @@
 import figlet from 'figlet';
 import gradient from 'gradient-string';
-import { APP_NAME } from '../constants.js';
+import { TITLE } from '../constants.js';
 
-/**
- * Render `Boilertowns` at the beginning.
- */
 export const renderTitle = () => {
-	const text = figlet.textSync(APP_NAME, {
+	const text = figlet.textSync(TITLE, {
 		font: 'Slant',
 	});
 
