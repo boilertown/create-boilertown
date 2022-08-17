@@ -1,38 +1,29 @@
 {
 	"compilerOptions": {
-		/* LANGUAGE COMPILATION OPTIONS */
 		"target": "ESNext",
 		"module": "NodeNext",
 		"lib": ["DOM", "DOM.Iterable", "ES2020"],
 		"moduleResolution": "NodeNext",
 		"resolveJsonModule": true,
-
-		/* EMIT RULES */
 		"sourceMap": true,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"removeComments": false,
 		"forceConsistentCasingInFileNames": true,
 		"allowSyntheticDefaultImports": true,
-
-		/* TYPE CHECKING RULES */
 		"strict": true,
 		"noUnusedLocals": true,
 		"useUnknownInCatchVariables": false,
-
-		/* OTHER OPTIONS */
 		"esModuleInterop": true,
 		"useDefineForClassFields": true,
 		"skipLibCheck": true,
 		"isolatedModules": true,
 		"allowJs": false,
-
-		/* MODULE ALIAS */
 		"baseUrl": "./",
 		"paths": {
 			"*": ["src/*"]
 		}
 	},
-	"include": ["src"],
+	"include": ["src", "__tests__"],
 	"exclude": ["node_modules", "dist"]
 }
