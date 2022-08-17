@@ -1,7 +1,7 @@
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
-import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+import { afterAll, beforeAll, describe, expect, test } from 'vitest';
 import { cleanupTestDir, runInteractiveCLI } from './utils/index.js';
 
 const createBoilertownsApp = path.resolve(__dirname, '../dist/index.js');
@@ -20,7 +20,7 @@ describe('create-boilertowns cli', () => {
 		cleanupTestDir(testDir);
 	});
 
-	it('should guide user through the process', async () => {
+	test('should guide user through the process', async () => {
 		const cli = spawn('node', [createBoilertownsApp]);
 		const messages = await runInteractiveCLI(cli);
 
