@@ -57,7 +57,7 @@ Hi! Thank you for your interest in Boilertowns! Your contributions are very welc
   pnpm run dev
   ```
 
-- Run test to make sure everything fine.
+- Run test to make sure everything is fine.
 
   ```sh
   pnpm test
