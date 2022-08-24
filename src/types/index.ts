@@ -12,14 +12,16 @@ interface ModifierParams {
 
 export type Modifier = (params: ModifierParams) => void;
 
-export interface Boilerplate {
-	/**
-	 * Name of the repository.
-	 */
+interface EnquirerChoice {
 	name: string;
-	/**
-	 * HTTP URL of repository.
-	 */
+	message?: string;
+	value?: string;
+	hint?: string;
+	disabled?: boolean | string;
+}
+
+export interface Boilerplate extends EnquirerChoice {
+	name: string;
 	repo: string;
 	/**
 	 * The npm scripts to get started with the boilerplate.

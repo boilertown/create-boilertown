@@ -3,6 +3,7 @@ import { modifier } from './modifier.js';
 
 const boilerplates: Boilerplate = {
 	name: '{{ name }}',
+	hint: '{{ stack }}',
 	repo: '{{ repo }}',
 	scripts: [{{#each scripts }}'{{ this }}',{{/each}}],
 	modifier,

@@ -3,6 +3,7 @@ import { modifier } from './modifier.js';
 
 const boilerplates: Boilerplate = {
 	name: 'react-nostalgia-boilerplate',
+	hint: 'Typescript, React, React Router v6, Styled-components, Babel, Webpack',
 	repo: 'https://github.com/boilertowns/react-nostalgia-boilerplate',
 	scripts: ['dev'],
 	modifier,
