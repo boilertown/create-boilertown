@@ -4,5 +4,5 @@
 	"initialVersions": {
 		"create-boilertowns": "0.0.6"
 	},
-	"changesets": []
+	"changesets": ["heavy-adults-beg"]
 }
