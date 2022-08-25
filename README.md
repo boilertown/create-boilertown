@@ -28,13 +28,18 @@ pnpm create boilertowns
 
 ## Available boilerplates
 
-The list of current boilerplates that you can select in Boilertowns. More will come soon.
+The list of current boilerplates that you can select in Boilertowns. More coming soon!
 
 ### React
 
-- [react-nostalgia-boilerplate](https://github.com/boilertowns/react-nostalgia-boilerplate) - Application boilerplate with Typescript, React, Styled-components, React Router v6, Babel and Webpack.
-- [react-ui-boilerplate](https://github.com/boilertowns/react-ui-boilerplate) - UI library with Typescript, React, Emotion, Rollup and Babel.
-- [react-monorepo-boilerplate](https://github.com/boilertowns/react-monorepo-boilerplate) - The boilerplate with opinionated setup to help you quickly kickstart your React monorepo project.
+- [react-minimal-boilerplate](https://github.com/boilertowns/react-minimal-boilerplate) - Basic Vite boilerplate with a little steroids. Typescript, Vite, Vitest, React, React Router v6, Tailwind CSS.
+- [react-nostalgia-boilerplate](https://github.com/boilertowns/react-nostalgia-boilerplate) - Application boilerplate. Typescript, React, React Router v6, Styled-components, Babel, Webpack.
+- [react-ui-boilerplate](https://github.com/boilertowns/react-ui-boilerplate) - React UI components boilerplate. Typescript, React, Emotion, Rollup, Babel.
+- [react-monorepo-boilerplate](https://github.com/boilertowns/react-monorepo-boilerplate) - Monorepo boilerplate. Typescript, Turborepo, React, React Router v6, Next.js, Rollup, Babel, Webpack.
+
+### Node
+
+- [node-cli-boilerplate](https://github.com/boilertowns/node-cli-boilerplate) - Node CLI boilerplate - `create-boilertowns` is using this. Typescript, tsup, Vitest.
 
 ## Contributing
 

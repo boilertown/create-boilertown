@@ -71,6 +71,19 @@ async function boilerplateIndexFileContent() {
 				message: 'Boilerplate name (ex. my-boilerplate):',
 			},
 			{
+				name: 'stack',
+				type: 'input',
+				message: 'Featured stack (ex. Typescript, React, ...):',
+				validate: (value) => {
+					if (typeof value === 'string' && value.length > 100) {
+						return `Please briefly describe the stack, max ${chalk.italic(
+							'100 characters',
+						)}.`;
+					}
+					return true;
+				},
+			},
+			{
 				name: 'repo',
 				type: 'input',
 				message: 'GitHub repository:',
@@ -102,13 +115,14 @@ async function boilerplateIndexFileContent() {
 				message: 'NPM "scripts" (comma-separated):',
 			},
 		]);
-		const { name, repo, scripts } = answers;
+		const { name, stack, repo, scripts } = answers;
 
-		const dir = path.resolve(boilerplatesDir, name);
+		const dir = path.resolve(boilerplatesDir, name.toLowerCase());
 		await fs.mkdir(dir);
 
 		const dirIndex = await createFileByTemplate('index.ts', {
 			name,
+			stack,
 			repo,
 			scripts,
 		});
