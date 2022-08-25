@@ -31,5 +31,5 @@ describe('create-boilertowns cli', () => {
 		).toBeTruthy();
 
 		expect(fs.existsSync(path.resolve(testDir, 'node_modules'))).toBe(false);
-	});
+	}, 10000);
 });
