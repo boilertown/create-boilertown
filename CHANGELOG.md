@@ -1,5 +1,11 @@
 # create-boilertowns
 
+## 0.0.7-next.0
+
+### Patch Changes
+
+- [#38](https://github.com/boilertowns/create-boilertowns/pull/38) [`905b774`](https://github.com/boilertowns/create-boilertowns/commit/905b77423157677e3f3d1cdf4d1e73fcb9ad29e1) Thanks [@mikunpham](https://github.com/mikunpham)! - Display brief stack next to boilerplate name.
+
 ## 0.0.6
 
 ### Patch Changes
