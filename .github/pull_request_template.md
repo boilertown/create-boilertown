@@ -6,4 +6,4 @@
 
 ## Appreciation
 
-<!-- If your create pull request to add a new boilerplate, don't forget to ⭐️ and give credit to the authors/maintainers. -->
+<!-- If your create pull request to add a new boilerplate, don't forget to ⭐️ and give credit to its authors/maintainers. -->
