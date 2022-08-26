@@ -40,7 +40,7 @@ The list of current boilerplates that you can select in Boilertowns. More coming
 ### Node
 
 - [node-cli-boilerplate](https://github.com/boilertowns/node-cli-boilerplate) - Node CLI boilerplate - `create-boilertowns` is using this. Typescript, tsup, Vitest.
-- [node-package-boilerplate](https://github.com/boilertowns/node-package-boilerplate) - Node.js module boilerplate. Typescript, Rollup, Jest.
+- [node-package-boilerplate](https://github.com/boilertowns/node-package-boilerplate) - Node.js module boilerplate. Typescript, Rollup, Vitest.
 
 ## Contributing
 
