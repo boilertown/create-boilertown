@@ -2,4 +2,4 @@
 'create-boilertowns': patch
 ---
 
-Display brief stack next to boilerplate name.
+Briefly display stack next to boilerplate name.
