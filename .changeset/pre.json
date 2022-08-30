@@ -4,5 +4,5 @@
 	"initialVersions": {
 		"create-boilertowns": "0.0.6"
 	},
-	"changesets": ["heavy-adults-beg"]
+	"changesets": ["five-cars-dance", "heavy-adults-beg"]
 }
