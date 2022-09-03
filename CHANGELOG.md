@@ -1,5 +1,11 @@
 # create-boilertowns
 
+## 0.0.7-next.1
+
+### Patch Changes
+
+- [#40](https://github.com/boilertowns/create-boilertowns/pull/40) [`56250b2`](https://github.com/boilertowns/create-boilertowns/commit/56250b27c2d65b4aa4645b5742f654f1146ca26f) Thanks [@mikunpham](https://github.com/mikunpham)! - Add `node-package-boilerplate`.
+
 ## 0.0.7-next.0
 
 ### Patch Changes
