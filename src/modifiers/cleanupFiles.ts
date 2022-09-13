@@ -9,6 +9,7 @@ const TO_BE_REMOVED = [
 	'CONTRIBUTING.md',
 	'README',
 	'README.md',
+	'CHANGELOG.md',
 	'package-lock.json',
 	'yarn.lock',
 	'npm-shrinkwrap.json',
