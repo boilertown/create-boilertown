@@ -11,6 +11,12 @@
   <img src="https://img.shields.io/github/license/boilertowns/react-nostalgia-boilerplate?style=flat-square" alt="MIT license" >
 </div>
 
+## Introduction
+
+You have some brilliant ideas and want to start coding it as soon as possible? The setup step slow you down and gradually make you give up on that brilliant ideas? Let **Boilertowns** help you get through that problem by becoming your boilerplate shopping center. You can freely choose which setup fit your purposes the most and kickstar your apps/ideas immediately.
+
+All the boilerplates in Boilertowns collection also contain basic configurations and effective folder architectures to help boosting developers experience and productivity.
+
 ## Getting started
 
 To start scaffolding your project, run any of the following three commands and answer the command prompt questions:
