@@ -15,7 +15,7 @@
 
 `Boilertowns` is the boilerplate shopping center!
 
-You can freely choose which boilerplate fit your purposes the most and kickstar your projects or ideas immediately. All the boilerplates in the collection contain basic configurations and effective folder architectures to help boosting developers experience and productivity.
+You can freely choose which boilerplate fit your purposes the most and kickstar your projects or ideas instantly. All the boilerplates in the collection are carefully crafted, they contains predefined configurations and effective folder architectures to help boosting developers experience and productivity.
 
 ## Getting started
 
