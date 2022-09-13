@@ -1,5 +1,15 @@
 # create-boilertowns
 
+## 0.0.7
+
+### Patch Changes
+
+- [#40](https://github.com/boilertowns/create-boilertowns/pull/40) [`56250b2`](https://github.com/boilertowns/create-boilertowns/commit/56250b27c2d65b4aa4645b5742f654f1146ca26f) Thanks [@mikunpham](https://github.com/mikunpham)! - Add `node-package-boilerplate`.
+
+- [#38](https://github.com/boilertowns/create-boilertowns/pull/38) [`905b774`](https://github.com/boilertowns/create-boilertowns/commit/905b77423157677e3f3d1cdf4d1e73fcb9ad29e1) Thanks [@mikunpham](https://github.com/mikunpham)! - Briefly display stack next to boilerplate name.
+
+- [#42](https://github.com/boilertowns/create-boilertowns/pull/42) [`bdd1931`](https://github.com/boilertowns/create-boilertowns/commit/bdd1931160d64fda9427a39251a890bb65710882) Thanks [@mikunpham](https://github.com/mikunpham)! - Update clean up files list after fetching the repo.
+
 ## 0.0.7-next.2
 
 ### Patch Changes
