@@ -4,7 +4,11 @@ import path from 'node:path';
 const TO_BE_REMOVED = [
 	'.git',
 	'LICENSE',
+	'LICENSE.md',
 	'CONTRIBUTING',
+	'CONTRIBUTING.md',
+	'README',
+	'README.md',
 	'package-lock.json',
 	'yarn.lock',
 	'npm-shrinkwrap.json',

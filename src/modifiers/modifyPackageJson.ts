@@ -18,6 +18,8 @@ export const modifyPackageJson = ({ projectDir, projectName }: Params) => {
 	packageJsonObject.version = '0.0.0';
 	packageJsonObject.private = true;
 	packageJsonObject.description = '';
+	packageJsonObject.license = undefined;
+	packageJsonObject.keywords = undefined;
 	packageJsonObject.repository = {
 		type: 'git',
 		url: '',
