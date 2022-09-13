@@ -1,5 +1,11 @@
 # create-boilertowns
 
+## 0.0.7-next.2
+
+### Patch Changes
+
+- [#42](https://github.com/boilertowns/create-boilertowns/pull/42) [`bdd1931`](https://github.com/boilertowns/create-boilertowns/commit/bdd1931160d64fda9427a39251a890bb65710882) Thanks [@mikunpham](https://github.com/mikunpham)! - Update clean up files list after fetching the repo.
+
 ## 0.0.7-next.1
 
 ### Patch Changes
