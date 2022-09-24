@@ -29,7 +29,7 @@ Hi! Thank you for your interest in Boilertowns! Your contributions are very welc
 
 > Please note these when creating a pull request:
 >
-> 1. Only add 1 boilerplate per pull reuqest.
+> 1. Only add 1 boilerplate per pull request.
 > 2. If the boilerplate is not yours, help me inform its authors/maintainers by tagging them in your pull request description.
 
 - You can add your favourite boilerplate by simply running command:
@@ -51,7 +51,7 @@ Hi! Thank you for your interest in Boilertowns! Your contributions are very welc
 
 ## CLI development
 
-- You can start developing `create-boilertowns` locally by runing:
+- You can start developing `create-boilertowns` locally by running:
 
   ```sh
   pnpm run dev
@@ -63,7 +63,7 @@ Hi! Thank you for your interest in Boilertowns! Your contributions are very welc
   pnpm test
   ```
 
-- Create changeset file and write a summary:
+- Create a changeset file and write a summary about your changes:
 
   ```sh
   pnpm run changeset
