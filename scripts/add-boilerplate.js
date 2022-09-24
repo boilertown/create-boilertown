@@ -2,7 +2,8 @@ import camelcase from 'camelcase';
 import chalk from 'chalk';
 import enquirer from 'enquirer';
 import handlebars from 'handlebars';
-import fs from 'node:fs/promises';
+import fs from 'node:fs';
+import fsPromises from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
@@ -22,7 +23,7 @@ const prettierConfig = {
 
 async function createFileByTemplate(templateName, data) {
 	const templateDir = path.resolve(__dirname, `templates/${templateName}.hbs`);
-	const content = await fs.readFile(templateDir, 'utf-8');
+	const content = await fsPromises.readFile(templateDir, 'utf-8');
 	const template = handlebars.compile(content);
 	return prettier.format(template(data), prettierConfig);
 }
@@ -43,7 +44,7 @@ async function boilerplateIndexFileContent() {
 
 	let exportContent = `export default [`;
 
-	const files = await fs.readdir(boilerplatesDir);
+	const files = await fsPromises.readdir(boilerplatesDir);
 
 	files
 		.filter((file) => file !== 'index.ts')
@@ -69,6 +70,13 @@ async function boilerplateIndexFileContent() {
 				name: 'name',
 				type: 'input',
 				message: 'Boilerplate name (ex. my-boilerplate):',
+				validate: async (value) => {
+					const dirToCheck = path.resolve(boilerplatesDir, value.toLowerCase());
+					if (fs.existsSync(dirToCheck)) {
+						return 'This boilerplate name has been used.';
+					}
+					return true;
+				},
 			},
 			{
 				name: 'stack',
@@ -82,6 +90,7 @@ async function boilerplateIndexFileContent() {
 					}
 					return true;
 				},
+				result: (value) => value.toLowerCase(),
 			},
 			{
 				name: 'repo',
@@ -117,8 +126,8 @@ async function boilerplateIndexFileContent() {
 		]);
 		const { name, stack, repo, scripts } = answers;
 
-		const dir = path.resolve(boilerplatesDir, name.toLowerCase());
-		await fs.mkdir(dir);
+		const dir = path.resolve(boilerplatesDir, name);
+		fs.mkdirSync(dir);
 
 		const dirIndex = await createFileByTemplate('index.ts', {
 			name,
@@ -129,12 +138,14 @@ async function boilerplateIndexFileContent() {
 		const dirModifier = await createFileByTemplate('modifier.ts', { repo });
 		const boilerplatesIndex = await boilerplateIndexFileContent();
 
-		await fs.writeFile(`${dir}/index.ts`, dirIndex, 'utf-8');
-		await fs.writeFile(`${dir}/modifier.ts`, dirModifier, 'utf-8');
-		await fs.writeFile(`${boilerplatesDir}/index.ts`, boilerplatesIndex, {
-			encoding: 'utf-8',
-			flag: 'w+',
-		});
+		await Promise.all([
+			fsPromises.writeFile(`${dir}/index.ts`, dirIndex, 'utf-8'),
+			fsPromises.writeFile(`${dir}/modifier.ts`, dirModifier, 'utf-8'),
+			fsPromises.writeFile(`${boilerplatesDir}/index.ts`, boilerplatesIndex, {
+				encoding: 'utf-8',
+				flag: 'w+',
+			}),
+		]);
 
 		console.log(`\n👍 Awesome!, ${chalk.green(name)} was added.\n`);
 	} catch (error) {
