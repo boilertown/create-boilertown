@@ -77,6 +77,7 @@ async function boilerplateIndexFileContent() {
 					}
 					return true;
 				},
+				result: (value) => value.toLowerCase(),
 			},
 			{
 				name: 'stack',
@@ -90,7 +91,6 @@ async function boilerplateIndexFileContent() {
 					}
 					return true;
 				},
-				result: (value) => value.toLowerCase(),
 			},
 			{
 				name: 'repo',
@@ -147,7 +147,7 @@ async function boilerplateIndexFileContent() {
 			}),
 		]);
 
-		console.log(`\n👍 Awesome!, ${chalk.green(name)} was added.\n`);
+		console.log(`\n👍 Awesome! ${chalk.green(name)} was added.\n`);
 	} catch (error) {
 		console.log(`❌ ${error}`);
 	}
