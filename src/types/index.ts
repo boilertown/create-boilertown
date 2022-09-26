@@ -3,6 +3,7 @@ export interface CliResults {
 	projectDir: string;
 	shouldOverwrite?: boolean;
 	boilerplate: string;
+	install: boolean;
 }
 
 interface ModifierParams {
