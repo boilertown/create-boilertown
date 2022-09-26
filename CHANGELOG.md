@@ -1,5 +1,13 @@
 # create-boilertowns
 
+## 0.0.8
+
+### Patch Changes
+
+- [#48](https://github.com/boilertowns/create-boilertowns/pull/48) [`dc2f6ab`](https://github.com/boilertowns/create-boilertowns/commit/dc2f6ab5a2db860ed1bd6e27d53ec5e212c355ad) Thanks [@mikunpham](https://github.com/mikunpham)! - Add one question to ask whether users want to install dependencies.
+
+- [#46](https://github.com/boilertowns/create-boilertowns/pull/46) [`e6eaa4f`](https://github.com/boilertowns/create-boilertowns/commit/e6eaa4fb400a78696b14d34b1bd6dd5502e65f63) Thanks [@mikunpham](https://github.com/mikunpham)! - Add new boilerplate `react-parcel-boilerplate`.
+
 ## 0.0.7
 
 ### Patch Changes
