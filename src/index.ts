@@ -9,7 +9,7 @@ import { scaffold } from 'cli-actions/scaffold.js';
 import { logger } from 'utils/logger.js';
 
 const main = async () => {
-	const { projectName, projectDir, boilerplate } = await cliPrompt();
+	const { projectName, projectDir, boilerplate, install } = await cliPrompt();
 	const selectedBoilerplate = boilerplates.find((b) => b.name === boilerplate);
 
 	if (!selectedBoilerplate) {
@@ -21,9 +21,10 @@ const main = async () => {
 	await postActions({
 		projectDir,
 		projectName,
+		install,
 		boilerplateModifier: selectedBoilerplate.modifier,
 	});
-	logNextSteps({ projectName, selectedBoilerplate });
+	logNextSteps({ projectName, selectedBoilerplate, install });
 };
 
 main().catch((err) => {

@@ -5,15 +5,21 @@ import type { Boilerplate } from 'types/index.js';
 interface Params {
 	projectName: string;
 	selectedBoilerplate: Boilerplate;
+	install: boolean;
 }
 
-export const logNextSteps = ({ projectName, selectedBoilerplate }: Params) => {
+export const logNextSteps = ({
+	projectName,
+	selectedBoilerplate,
+	install,
+}: Params) => {
 	const { pkgManagerName } = getPkgManagerFromAgent();
 
-	logger.succeed('\n🚀 Your codebase is ready!\n');
 	logger.info('Next steps:');
 	logger.info(`  cd ${projectName}`);
-	logger.info(`  ${pkgManagerName} install`);
+	if (!install) {
+		logger.info(`  ${pkgManagerName} install`);
+	}
 	selectedBoilerplate.scripts?.forEach((script) => {
 		logger.info(`  ${pkgManagerName} run ${script}`);
 	});

@@ -77,11 +77,18 @@ export const cliPrompt = async (): Promise<CliResults> => {
 			},
 			onCancel: cancelFlow,
 		},
+		{
+			name: 'install',
+			type: 'confirm',
+			message: 'Would you like to install dependencies?',
+			initial: false,
+		},
 	]);
 
 	return {
 		projectName: answers.projectName,
 		projectDir: path.resolve(process.cwd(), answers.projectName),
 		boilerplate: answers.boilerplate,
+		install: answers.install,
 	};
 };
