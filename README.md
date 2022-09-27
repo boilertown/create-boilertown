@@ -22,6 +22,9 @@ You can freely choose which boilerplate fit your purposes the most and kickstar 
 To start scaffolding your project, run any of the following three commands and answer the command prompt questions:
 
 ```bash
+# npx
+npx create-boilertowns@latest
+
 # npm
 npm create boilertowns@latest
 
