@@ -39,7 +39,7 @@
 		"globby": "^13.1.2",
 		"gradient-string": "^2.0.2",
 		"ora": "^6.1.2",
-		"sort-package-json": "^1.57.0",
+		"sort-package-json": "^2.0.0",
 		"yaml": "^2.1.1"
 	},
 	"devDependencies": {
