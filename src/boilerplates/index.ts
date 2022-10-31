@@ -11,6 +11,7 @@
 import nodeCliBoilerplate from './node-cli-boilerplate/index.js';
 import nodePackageBoilerplate from './node-package-boilerplate/index.js';
 import reactMinimalBoilerplate from './react-minimal-boilerplate/index.js';
+import reactMinimalV2Boilerplate from './react-minimal-v2-boilerplate/index.js';
 import reactMonorepoBoilerplate from './react-monorepo-boilerplate/index.js';
 import reactNostalgiaBoilerplate from './react-nostalgia-boilerplate/index.js';
 import reactParcelBoilerplate from './react-parcel-boilerplate/index.js';
@@ -20,6 +21,7 @@ export default [
 	nodeCliBoilerplate,
 	nodePackageBoilerplate,
 	reactMinimalBoilerplate,
+	reactMinimalV2Boilerplate,
 	reactMonorepoBoilerplate,
 	reactNostalgiaBoilerplate,
 	reactParcelBoilerplate,

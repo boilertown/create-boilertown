@@ -42,6 +42,7 @@ The list of current boilerplates that you can select in Boilertowns. More coming
 ### React
 
 - [react-minimal-boilerplate](https://github.com/boilertowns/react-minimal-boilerplate) - Basic Vite boilerplate with a little steroids. Typescript, Vite, Vitest, React, React Router v6, Tailwind CSS.
+- [react-minimal-v2-boilerplate](https://github.com/boilertowns/react-minimal-v2-boilerplate) - Version 2 of `react-minimal-boilerplate`. Use [@antfu/eslint-config](https://github.com/antfu/eslint-config) to lint and format codes.
 - [react-parcel-boilerplate](https://github.com/boilertowns/react-parcel-boilerplate) - Typescript, Parcel, React, React Router v6, Tailwind CSS.
 - [react-nostalgia-boilerplate](https://github.com/boilertowns/react-nostalgia-boilerplate) - Application boilerplate. Typescript, React, React Router v6, Styled-components, Babel, Webpack.
 - [react-ui-boilerplate](https://github.com/boilertowns/react-ui-boilerplate) - React UI components boilerplate. Typescript, React, Emotion, Rollup, Babel.

@@ -1,7 +1,7 @@
 import { globbySync } from 'globby';
 import fs from 'node:fs';
 import path from 'node:path';
-import { sortPackageJson } from 'sort-package-json';
+import sortPackageJson from 'sort-package-json';
 import type { PackageJson } from 'type-fest';
 import { modifyGithubActions } from 'modifiers/index.js';
 import { getPkgManagerFromAgent } from 'utils/getPkgManagerFromAgent.js';

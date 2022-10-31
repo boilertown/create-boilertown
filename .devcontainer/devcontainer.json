@@ -5,7 +5,7 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
-			"VARIANT": "16-bullseye"
+			"VARIANT": "18-bullseye"
 		}
 	},
 
@@ -19,8 +19,6 @@
 			]
 		}
 	},
-
-	"runArgs": ["--env-file", ".devcontainer/devcontainer.env"],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
