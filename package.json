@@ -46,7 +46,7 @@
 		"@changesets/cli": "^2.25.1",
 		"@commitlint/cli": "^17.1.2",
 		"@commitlint/config-conventional": "^17.1.0",
-		"@trivago/prettier-plugin-sort-imports": "^3.4.0",
+		"@trivago/prettier-plugin-sort-imports": "^4.0.0",
 		"@types/figlet": "^1.5.5",
 		"@types/gradient-string": "^1.1.2",
 		"@types/node": "^18.11.8",
