@@ -1,5 +1,15 @@
 # create-boilertowns
 
+## 0.0.9
+
+### Patch Changes
+
+- [#52](https://github.com/boilertowns/create-boilertowns/pull/52) [`86da228`](https://github.com/boilertowns/create-boilertowns/commit/86da228d95d55fd560b15c43a9776e3b27e1facd) Thanks [@mikunpham](https://github.com/mikunpham)! - Add new `react-module-federation-boilerplate`.
+
+- [#50](https://github.com/boilertowns/create-boilertowns/pull/50) [`c20c13f`](https://github.com/boilertowns/create-boilertowns/commit/c20c13f88b76ddad9c34263db8b4cd965849c75d) Thanks [@mikunpham](https://github.com/mikunpham)! - Add new `react-minimal-v2-boilerplate`.
+
+- [#50](https://github.com/boilertowns/create-boilertowns/pull/50) [`c20c13f`](https://github.com/boilertowns/create-boilertowns/commit/c20c13f88b76ddad9c34263db8b4cd965849c75d) Thanks [@mikunpham](https://github.com/mikunpham)! - refactor: change sort-package-json
+
 ## 0.0.8
 
 ### Patch Changes
