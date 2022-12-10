@@ -37,15 +37,16 @@ pnpm create boilertowns
 
 ## Available boilerplates
 
-The list of current boilerplates that you can select in Boilertowns. More coming soon!
+The list of boilerplates that you can select in Boilertowns:
 
 ### React
 
+- [react-nostalgia-boilerplate](https://github.com/boilertowns/react-nostalgia-boilerplate) - Application boilerplate. Typescript, React, React Router v6, Styled-components, Babel, Webpack.
 - [react-minimal-boilerplate](https://github.com/boilertowns/react-minimal-boilerplate) - Basic Vite boilerplate with a little steroids. Typescript, Vite, Vitest, React, React Router v6, Tailwind CSS.
 - [react-minimal-v2-boilerplate](https://github.com/boilertowns/react-minimal-v2-boilerplate) - Version 2 of `react-minimal-boilerplate`. Use [@antfu/eslint-config](https://github.com/antfu/eslint-config) to lint and format codes.
 - [react-parcel-boilerplate](https://github.com/boilertowns/react-parcel-boilerplate) - Typescript, Parcel, React, React Router v6, Tailwind CSS.
-- [react-nostalgia-boilerplate](https://github.com/boilertowns/react-nostalgia-boilerplate) - Application boilerplate. Typescript, React, React Router v6, Styled-components, Babel, Webpack.
 - [react-ui-boilerplate](https://github.com/boilertowns/react-ui-boilerplate) - React UI components boilerplate. Typescript, React, Emotion, Rollup, Babel.
+- [react-module-federation-boilerplate](https://github.com/boilertowns/react-module-federation-boilerplate) - Monorepo with Nx, Typescript, React, React Router v6, Webpack and Module Federation.
 - [react-monorepo-boilerplate](https://github.com/boilertowns/react-monorepo-boilerplate) - Monorepo boilerplate. Typescript, Turborepo, React, React Router v6, Next.js, Rollup, Babel, Webpack.
 
 ### Node
