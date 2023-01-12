@@ -8,7 +8,7 @@ import { getPkgManagerFromAgent } from 'utils/getPkgManagerFromAgent.js';
 import type { Modifier } from 'types/index.js';
 
 /**
- * Custom modifier of https://github.com/boilertowns/react-module-federation-boilerplate
+ * Custom modifier of https://github.com/boilertown/react-module-federation-boilerplate
  */
 export const modifier: Modifier = ({ projectDir }) => {
 	const { pkgManagerName, pkgManagerVersion } = getPkgManagerFromAgent();

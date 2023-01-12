@@ -1,4 +1,4 @@
-<!-- Thank you for opening a pull request to Boilertowns 🙏 -->
+<!-- Thank you for opening a pull request to Boilertown 🙏 -->
 
 ## Summary
 

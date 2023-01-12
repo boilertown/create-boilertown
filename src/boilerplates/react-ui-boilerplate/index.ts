@@ -4,7 +4,7 @@ import { modifier } from './modifier.js';
 const boilerplates: Boilerplate = {
 	name: 'react-ui-boilerplate',
 	hint: 'Typescript, React, Emotion, Rollup, Babel',
-	repo: 'https://github.com/boilertowns/react-ui-boilerplate',
+	repo: 'https://github.com/boilertown/react-ui-boilerplate',
 	scripts: ['storybook'],
 	modifier,
 };

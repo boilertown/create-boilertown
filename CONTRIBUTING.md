@@ -1,6 +1,6 @@
-# Contributing to Boilertowns
+# Contributing to Boilertown
 
-Hi! Thank you for your interest in Boilertowns! Your contributions are very welcome and valuable to Boilertowns ❤️ Before submitting your contribution, please make sure to take a moment and read through the following guide:
+Hi! Thank you for your interest in Boilertown! Your contributions are very welcome and valuable to Boilertown ❤️ Before submitting your contribution, please make sure to take a moment and read through the following guide:
 
 ## Setup
 
@@ -9,8 +9,8 @@ Hi! Thank you for your interest in Boilertowns! Your contributions are very welc
 - Fork this repository to your own GitHub account and clone it to your local machine.
 
   ```sh
-  git clone https://github.com/[your-username]/create-boilertowns.git
-  cd create-boilertowns
+  git clone https://github.com/[your-username]/create-boilertown.git
+  cd create-boilertown
   ```
 
 - Create a new branch.
@@ -51,7 +51,7 @@ Hi! Thank you for your interest in Boilertowns! Your contributions are very welc
 
 ## CLI development
 
-- You can start developing `create-boilertowns` locally by running:
+- You can start developing `create-boilertown` locally by running:
 
   ```sh
   pnpm run dev

@@ -4,7 +4,7 @@ import { modifier } from './modifier.js';
 const boilerplates: Boilerplate = {
 	name: 'react-module-federation-boilerplate',
 	hint: 'Monorepo with Nx, Typescript, React, React Router v6, Webpack and Module Federation',
-	repo: 'https://github.com/boilertowns/react-module-federation-boilerplate',
+	repo: 'https://github.com/boilertown/react-module-federation-boilerplate',
 	scripts: ['dev'],
 	modifier,
 };
