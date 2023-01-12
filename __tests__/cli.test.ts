@@ -4,14 +4,14 @@ import path from 'node:path';
 import { afterAll, beforeAll, describe, expect, test } from 'vitest';
 import { cleanupTestDir, runInteractiveCLI } from './utils/index.js';
 
-const createBoilertownsApp = path.resolve(__dirname, '../dist/index.js');
+const createBoilertownApp = path.resolve(__dirname, '../dist/index.js');
 const testDir = path.join(__dirname, '../my-awesome-project');
 
-describe('create-boilertowns cli', () => {
+describe('create-boilertown cli', () => {
 	beforeAll(() => {
-		if (!fs.existsSync(createBoilertownsApp)) {
+		if (!fs.existsSync(createBoilertownApp)) {
 			throw new Error(
-				'Cannot run Boilertowns CLI tests without building. Run `pnpm build` first.',
+				'Cannot run Boilertown CLI tests without building. Run `pnpm build` first.',
 			);
 		}
 	});
@@ -21,7 +21,7 @@ describe('create-boilertowns cli', () => {
 	});
 
 	test('should guide user through the process', async () => {
-		const cli = spawn('node', [createBoilertownsApp]);
+		const cli = spawn('node', [createBoilertownApp]);
 		const messages = await runInteractiveCLI(cli);
 
 		expect(

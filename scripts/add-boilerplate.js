@@ -62,7 +62,7 @@ async function boilerplateIndexFileContent() {
 (async () => {
 	try {
 		console.log(
-			chalk.bold('🎉 Welcome & thank you for contributing to Boilertowns!\n'),
+			chalk.bold('🎉 Welcome & thank you for contributing to Boilertown!\n'),
 		);
 
 		const answers = await enquirer.prompt([

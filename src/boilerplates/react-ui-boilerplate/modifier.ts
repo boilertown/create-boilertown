@@ -3,7 +3,7 @@ import { getPkgManagerFromAgent } from 'utils/getPkgManagerFromAgent.js';
 import type { Modifier } from 'types/index.js';
 
 /**
- * Custom modifier of https://github.com/boilertowns/react-ui-boilerplate
+ * Custom modifier of https://github.com/boilertown/react-ui-boilerplate
  */
 export const modifier: Modifier = ({ projectDir }) => {
 	const { pkgManagerName } = getPkgManagerFromAgent();

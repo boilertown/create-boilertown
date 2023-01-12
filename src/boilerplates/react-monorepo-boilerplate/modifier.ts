@@ -8,7 +8,7 @@ import { getPkgManagerFromAgent } from 'utils/getPkgManagerFromAgent.js';
 import type { Modifier } from 'types/index.js';
 
 /**
- * Custom modifier of https://github.com/boilertowns/react-monorepo-boilerplate
+ * Custom modifier of https://github.com/boilertown/react-monorepo-boilerplate
  */
 export const modifier: Modifier = ({ projectDir }) => {
 	const { pkgManagerName, pkgManagerVersion } = getPkgManagerFromAgent();
