@@ -1,5 +1,11 @@
 # create-boilertown
 
+## 0.0.1
+
+### Patch Changes
+
+- [#57](https://github.com/boilertown/create-boilertown/pull/57) [`19d5131`](https://github.com/boilertown/create-boilertown/commit/19d5131b0d5ad8c2e2cf0419d72db2905b85b25c) Thanks [@mikunpham](https://github.com/mikunpham)! - Release first new version of `create-boilertown`. Migrate from `create-boilertowns` by removing the `s` from the name 🎉.
+
 ## 0.0.9
 
 ### Patch Changes
